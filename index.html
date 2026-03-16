@@ -1,96 +1,136 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ADJOY IPTV | Tasarım Aşamasında</title>
+<title>ADJOY IPTV | Çok Yakında</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 body{
 margin:0;
 font-family:Inter;
-background:#070c17;
+background:#050914;
 color:white;
-height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
+height:100vh;
 text-align:center;
 overflow:hidden;
 }
 
+/* NEON BACKGROUND */
+
 .bg{
 position:absolute;
-width:1200px;
-height:1200px;
-background:radial-gradient(circle,#00e5ff33,transparent 60%);
+width:900px;
+height:900px;
+background:radial-gradient(circle,#00e5ff55,transparent 60%);
 filter:blur(120px);
-animation:float 12s infinite ease-in-out;
+animation:float 10s infinite ease-in-out;
 }
 
 @keyframes float{
-0%{transform:translateY(-50px)}
-50%{transform:translateY(50px)}
-100%{transform:translateY(-50px)}
+0%{transform:translateY(-60px)}
+50%{transform:translateY(60px)}
+100%{transform:translateY(-60px)}
 }
 
 .container{
 position:relative;
 z-index:2;
-max-width:600px;
-padding:40px;
+max-width:650px;
+padding:30px;
 }
 
+/* LOGO */
+
 .logo{
-font-size:40px;
+font-family:Orbitron;
+font-size:48px;
 font-weight:800;
-margin-bottom:10px;
-letter-spacing:2px;
 background:linear-gradient(90deg,#00e5ff,#00ffa2);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+margin-bottom:10px;
 }
+
+/* TITLE */
 
 h1{
-font-size:34px;
-margin:10px 0;
+font-size:36px;
+margin:15px 0;
 }
+
+/* TEXT */
 
 p{
-color:#a0b3d6;
+color:#9fb0d1;
 line-height:1.7;
+font-size:17px;
 }
 
-.btn{
+/* COUNTDOWN */
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:20px;
 margin-top:30px;
+}
+
+.box{
+background:#0c1222;
+padding:20px;
+border-radius:14px;
+width:80px;
+box-shadow:0 0 20px #00e5ff33;
+}
+
+.box span{
+font-size:28px;
+font-weight:700;
+display:block;
+}
+
+.box small{
+color:#8fa2c6;
+}
+
+/* BUTTON */
+
+.btn{
 display:inline-block;
-padding:16px 30px;
-border-radius:50px;
-background:linear-gradient(90deg,#00ffa2,#00e5ff);
-color:#021018;
+margin-top:35px;
+padding:16px 32px;
+border-radius:40px;
+font-size:18px;
 font-weight:700;
 text-decoration:none;
-font-size:18px;
-box-shadow:0 0 30px rgba(0,255,170,.5);
+color:#021018;
+background:linear-gradient(90deg,#00ffa2,#00e5ff);
+box-shadow:0 0 40px rgba(0,255,170,.6);
 transition:.3s;
 }
 
 .btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 50px rgba(0,255,170,.9);
+transform:scale(1.07);
+box-shadow:0 0 60px rgba(0,255,170,1);
 }
 
 .footer{
 margin-top:40px;
-color:#7c8ca8;
 font-size:14px;
+color:#6e83a8;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -104,14 +144,37 @@ ADJOY IPTV
 </div>
 
 <h1>
-Web Sitemiz Tasarım Aşamasında
+Yeni Web Sitemiz Çok Yakında
 </h1>
 
 <p>
-Şu anda sitemizi daha iyi bir deneyim sunmak için geliştiriyoruz.<br>
-Test almak, paket bilgisi öğrenmek veya destek almak için
-WhatsApp üzerinden bize ulaşabilirsiniz.
+ADJOY IPTV için yeni ve premium web sitemizi hazırlıyoruz.<br>
+Test almak veya paket bilgisi için WhatsApp üzerinden bize ulaşabilirsiniz.
 </p>
+
+<div class="countdown">
+
+<div class="box">
+<span id="days">0</span>
+<small>Gün</small>
+</div>
+
+<div class="box">
+<span id="hours">0</span>
+<small>Saat</small>
+</div>
+
+<div class="box">
+<span id="minutes">0</span>
+<small>Dakika</small>
+</div>
+
+<div class="box">
+<span id="seconds">0</span>
+<small>Saniye</small>
+</div>
+
+</div>
 
 <a class="btn" href="https://wa.me/16892674393" target="_blank">
 WhatsApp'tan İletişime Geç
@@ -122,6 +185,36 @@ WhatsApp'tan İletişime Geç
 </div>
 
 </div>
+
+<script>
+
+var countDownDate = new Date("June 1, 2026 00:00:00").getTime();
+
+var x = setInterval(function() {
+
+var now = new Date().getTime();
+
+var distance = countDownDate - now;
+
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("days").innerHTML = days;
+
+document.getElementById("hours").innerHTML = hours;
+
+document.getElementById("minutes").innerHTML = minutes;
+
+document.getElementById("seconds").innerHTML = seconds;
+
+}, 1000);
+
+</script>
 
 </body>
 </html>
