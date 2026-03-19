@@ -1,612 +1,504 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ADJOY IPTV | Çok Yakında</title>
-  <meta name="description" content="ADJOY IPTV yeni premium web sitesi çok yakında yayında. Test almak, paket bilgisi ve destek için WhatsApp üzerinden bize ulaşın.">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ADJOY IPTV - En İyi IPTV Satın Al</title>
+  <meta name="description" content="Yerli ve yabancı binlerce kanal, film ve dizi içeriği ile ADJOY IPTV'yi hemen satın alın. Uygun fiyatlar ve kaliteli yayın!"/>
+  <meta name="keywords" content="iptv, iptv satın al, iptv Türkiye, iptv Avrupa, en iyi iptv, ip tv, m3u iptv, iptv yayını, uygun iptv, iptv test, bedava iptv, adjoy iptv"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="ADJOY IPTV"/>
+  <link rel="canonical" href="https://adjoytv.com"/>
+
+  <meta property="og:title" content="ADJOY IPTV - Yerli ve Yabancı Binlerce Kanal!"/>
+  <meta property="og:description" content="HD - 4K kalitede yayınlarla en iyi IPTV deneyimi burada! Şimdi satın alın."/>
+  <meta property="og:image" content="img/logo.png"/>
+  <meta property="og:url" content="https://adjoytv.com"/>
+  <meta property="og:type" content="website"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="ADJOY IPTV - En Kaliteli IPTV Satın Al"/>
+  <meta name="twitter:description" content="Binlerce yerli-yabancı kanal, spor yayınları ve film arşivi burada. Hemen ADJOY IPTV'yi deneyin!"/>
+  <meta name="twitter:image" content="img/logo.png"/>
+
+  <link rel="icon" type="image/png" href="img/logo.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
-  <style>
-    :root{
-      --bg:#040814;
-      --bg2:#081120;
-      --text:#eef6ff;
-      --muted:#9cb2d1;
-      --line:rgba(255,255,255,.12);
-      --card:rgba(255,255,255,.06);
-      --cyan:#00d9ff;
-      --green:#00f7a5;
-      --gold:#ffd86b;
-      --purple:#7c5cff;
-      --wa:#25D366;
-      --shadow:0 20px 60px rgba(0,0,0,.42);
-    }
-
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      min-height:100vh;
-      font-family:Inter,system-ui,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(900px 500px at -10% -10%, rgba(0,217,255,.12), transparent 40%),
-        radial-gradient(900px 500px at 110% 0%, rgba(0,247,165,.10), transparent 40%),
-        radial-gradient(700px 400px at 50% 110%, rgba(124,92,255,.12), transparent 40%),
-        linear-gradient(180deg, #040814 0%, #07101d 100%);
-      overflow:hidden;
-      position:relative;
-    }
-
-    .noise{
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:.08;
-      background-image:
-        radial-gradient(circle at 20% 20%, #fff 0 1px, transparent 1px),
-        radial-gradient(circle at 80% 30%, #fff 0 1px, transparent 1px),
-        radial-gradient(circle at 50% 80%, #fff 0 1px, transparent 1px);
-      background-size:180px 180px, 240px 240px, 220px 220px;
-      animation:drift 18s linear infinite;
-    }
-
-    .aurora{
-      position:absolute;
-      inset:0;
-      overflow:hidden;
-      pointer-events:none;
-    }
-
-    .blob{
-      position:absolute;
-      filter:blur(60px);
-      opacity:.55;
-      mix-blend-mode:screen;
-      border-radius:50%;
-    }
-
-    .b1{
-      width:460px;height:460px;
-      background:radial-gradient(circle, rgba(0,217,255,.75), transparent 62%);
-      top:-90px; left:-80px;
-      animation:float1 14s ease-in-out infinite;
-    }
-
-    .b2{
-      width:520px;height:520px;
-      background:radial-gradient(circle, rgba(0,247,165,.58), transparent 62%);
-      top:-120px; right:-90px;
-      animation:float2 18s ease-in-out infinite;
-    }
-
-    .b3{
-      width:440px;height:440px;
-      background:radial-gradient(circle, rgba(124,92,255,.45), transparent 62%);
-      bottom:-120px; left:35%;
-      animation:float3 16s ease-in-out infinite;
-    }
-
-    .glow-ring{
-      position:absolute;
-      width:720px;
-      height:720px;
-      border-radius:50%;
-      left:50%;
-      top:52%;
-      transform:translate(-50%,-50%);
-      border:1px solid rgba(255,255,255,.06);
-      box-shadow:
-        0 0 0 40px rgba(255,255,255,.015),
-        0 0 0 80px rgba(255,255,255,.01);
-      opacity:.6;
-      pointer-events:none;
-    }
-
-    .channels{
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      overflow:hidden;
-      mask-image:linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-      -webkit-mask-image:linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-    }
-
-    .track{
-      position:absolute;
-      left:-10%;
-      right:-10%;
-      display:flex;
-      gap:14px;
-      white-space:nowrap;
-      opacity:.14;
-    }
-
-    .track.top{top:18%; animation:slide-left 28s linear infinite;}
-    .track.mid{top:50%; animation:slide-right 24s linear infinite;}
-    .track.bot{top:77%; animation:slide-left 30s linear infinite;}
-
-    .chip{
-      flex:0 0 auto;
-      padding:10px 16px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.04);
-      color:#dbf8ff;
-      font-weight:800;
-      font-size:.9rem;
-      letter-spacing:.2px;
-      backdrop-filter:blur(8px);
-      box-shadow:0 10px 24px rgba(0,0,0,.18);
-    }
-
-    .wrap{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:28px 18px;
-      position:relative;
-      z-index:2;
-    }
-
-    .card{
-      width:min(960px, 100%);
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      border-radius:30px;
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(18px);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:-1px;
-      background:
-        linear-gradient(135deg, rgba(0,217,255,.18), transparent 22%, transparent 70%, rgba(0,247,165,.18)),
-        linear-gradient(45deg, rgba(124,92,255,.12), transparent 35%, rgba(255,216,107,.10));
-      z-index:0;
-      pointer-events:none;
-    }
-
-    .content{
-      position:relative;
-      z-index:1;
-      padding:34px 30px 28px;
-      text-align:center;
-    }
-
-    .topbar{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:10px;
-      margin-bottom:18px;
-      flex-wrap:wrap;
-    }
-
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 16px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.05);
-      color:#d7f7ff;
-      font-size:.92rem;
-      font-weight:800;
-      box-shadow:0 10px 24px rgba(0,0,0,.16);
-    }
-
-    .live-dot{
-      width:9px;height:9px;border-radius:50%;
-      background:var(--green);
-      box-shadow:0 0 16px var(--green);
-      animation:pulse 1.8s infinite;
-    }
-
-    .logo{
-      margin:10px 0 8px;
-      font-family:Orbitron,Inter,sans-serif;
-      font-size:clamp(34px,6vw,68px);
-      font-weight:800;
-      line-height:1;
-      letter-spacing:1px;
-      background:linear-gradient(135deg, var(--cyan), var(--green), #c9f7ff);
-      -webkit-background-clip:text;
-      background-clip:text;
-      -webkit-text-fill-color:transparent;
-      text-shadow:0 0 30px rgba(0,217,255,.18);
-    }
-
-    .subtitle{
-      font-size:clamp(24px,4vw,42px);
-      font-weight:900;
-      margin:0 0 14px;
-      line-height:1.12;
-    }
-
-    .desc{
-      max-width:760px;
-      margin:0 auto;
-      color:var(--muted);
-      font-size:1.04rem;
-      line-height:1.8;
-    }
-
-    .status{
-      margin:22px auto 0;
-      width:fit-content;
-      padding:12px 18px;
-      border-radius:999px;
-      background:linear-gradient(135deg, rgba(0,217,255,.14), rgba(0,247,165,.12));
-      border:1px solid rgba(255,255,255,.12);
-      color:#ddfbff;
-      font-weight:800;
-      box-shadow:0 10px 24px rgba(0,0,0,.18);
-    }
-
-    .countdown{
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0,1fr));
-      gap:14px;
-      max-width:720px;
-      margin:28px auto 0;
-    }
-
-    .time-box{
-      padding:18px 12px;
-      border-radius:22px;
-      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 16px 40px rgba(0,0,0,.24);
-    }
-
-    .time-box span{
-      display:block;
-      font-size:clamp(28px,4vw,42px);
-      font-weight:900;
-      color:#f1fbff;
-      line-height:1;
-      margin-bottom:8px;
-    }
-
-    .time-box small{
-      color:#9fc3df;
-      font-size:.92rem;
-      font-weight:700;
-      letter-spacing:.4px;
-      text-transform:uppercase;
-    }
-
-    .features{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:12px;
-      max-width:820px;
-      margin:22px auto 0;
-    }
-
-    .feature{
-      padding:15px 14px;
-      border-radius:18px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.10);
-      color:#dff5ff;
-      font-weight:700;
-    }
-
-    .buttons{
-      display:flex;
-      justify-content:center;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-top:28px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      min-width:240px;
-      padding:16px 24px;
-      border-radius:999px;
-      font-weight:900;
-      text-decoration:none;
-      transition:.25s ease;
-      font-size:1rem;
-    }
-
-    .btn-main{
-      color:#031319;
-      background:linear-gradient(135deg, var(--green), var(--cyan));
-      box-shadow:0 16px 40px rgba(0,217,255,.24);
-    }
-
-    .btn-main:hover{
-      transform:translateY(-3px) scale(1.01);
-      box-shadow:0 20px 50px rgba(0,217,255,.34);
-    }
-
-    .btn-alt{
-      color:#e9f5ff;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.14);
-      backdrop-filter:blur(10px);
-    }
-
-    .btn-alt:hover{
-      transform:translateY(-2px);
-      background:rgba(255,255,255,.08);
-    }
-
-    .note{
-      margin-top:16px;
-      color:#88a4c7;
-      font-size:.96rem;
-    }
-
-    .footer{
-      margin-top:22px;
-      color:#7f99bc;
-      font-size:.92rem;
-      line-height:1.7;
-    }
-
-    .wa-float{
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      z-index:15;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:13px 17px;
-      border-radius:999px;
-      background:linear-gradient(135deg, var(--wa), #1eba5b);
-      color:#04160a;
-      text-decoration:none;
-      font-weight:900;
-      box-shadow:0 0 0 0 rgba(37,211,102,.55), 0 16px 36px rgba(0,0,0,.25);
-      animation:waPulse 2.1s infinite;
-    }
-
-    .wa-ico{
-      width:26px;
-      height:26px;
-      border-radius:8px;
-      background:#fff;
-      color:#20b15a;
-      display:grid;
-      place-items:center;
-      font-weight:900;
-      font-size:15px;
-      flex:0 0 auto;
-    }
-
-    @keyframes pulse{
-      0%,100%{transform:scale(1);opacity:1}
-      50%{transform:scale(1.12);opacity:.8}
-    }
-
-    @keyframes waPulse{
-      0%{box-shadow:0 0 0 0 rgba(37,211,102,.55), 0 16px 36px rgba(0,0,0,.25)}
-      70%{box-shadow:0 0 0 18px rgba(37,211,102,0), 0 16px 36px rgba(0,0,0,.25)}
-      100%{box-shadow:0 0 0 0 rgba(37,211,102,0), 0 16px 36px rgba(0,0,0,.25)}
-    }
-
-    @keyframes float1{
-      0%,100%{transform:translate(0,0)}
-      50%{transform:translate(30px,20px)}
-    }
-    @keyframes float2{
-      0%,100%{transform:translate(0,0)}
-      50%{transform:translate(-25px,18px)}
-    }
-    @keyframes float3{
-      0%,100%{transform:translate(0,0)}
-      50%{transform:translate(18px,-22px)}
-    }
-
-    @keyframes slide-left{
-      from{transform:translateX(0)}
-      to{transform:translateX(-18%)}
-    }
-
-    @keyframes slide-right{
-      from{transform:translateX(-18%)}
-      to{transform:translateX(0)}
-    }
-
-    @keyframes drift{
-      from{transform:translateY(0)}
-      to{transform:translateY(18px)}
-    }
-
-    @media (max-width:860px){
-      .countdown{grid-template-columns:repeat(2,1fr)}
-      .features{grid-template-columns:1fr}
-      .content{padding:28px 18px 24px}
-      .subtitle{font-size:2rem}
-    }
-
-    @media (max-width:560px){
-      .countdown{grid-template-columns:1fr 1fr}
-      .btn{min-width:100%}
-      .logo{font-size:2.3rem}
-      .subtitle{font-size:1.7rem}
-      .desc{font-size:.98rem}
-      .wa-float{right:12px;bottom:12px;padding:11px 14px}
-      .track{gap:10px}
-      .chip{padding:8px 12px;font-size:.8rem}
-    }
-
-    @media (prefers-reduced-motion:reduce){
-      *, *::before, *::after{animation:none !important; transition:none !important}
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <div class="noise"></div>
 
-  <div class="aurora" aria-hidden="true">
-    <div class="blob b1"></div>
-    <div class="blob b2"></div>
-    <div class="blob b3"></div>
-    <div class="glow-ring"></div>
-  </div>
-
-  <div class="channels" aria-hidden="true">
-    <div class="track top">
-      <div class="chip">CANLI TV</div>
-      <div class="chip">SPOR</div>
-      <div class="chip">FİLM</div>
-      <div class="chip">DİZİ</div>
-      <div class="chip">BELGESEL</div>
-      <div class="chip">4K YAYIN</div>
-      <div class="chip">PREMIUM IPTV</div>
-      <div class="chip">SMART TV</div>
-      <div class="chip">ANDROID TV</div>
-      <div class="chip">IPTV TEST</div>
+  <header class="site-header" id="siteHeader">
+  <div class="container">
+    <div class="logo-text">
+      <a href="index.html">
+        <img src="img/logo.png" alt="ADJOY IPTV Logo">
+        <span class="green">ADJOY</span>
+        <span class="white">IPTV</span>
+      </a>
     </div>
 
-    <div class="track mid">
-      <div class="chip">ADJOY IPTV</div>
-      <div class="chip">KESİNTİSİZ YAYIN</div>
-      <div class="chip">WHATSAPP DESTEK</div>
-      <div class="chip">TÜRKİYE</div>
-      <div class="chip">AVRUPA</div>
-      <div class="chip">VOD ARŞİVİ</div>
-      <div class="chip">7/24 DESTEK</div>
-      <div class="chip">HIZLI KURULUM</div>
-      <div class="chip">PREMIUM DENEYİM</div>
+    <div class="burger" id="burger" aria-label="Menü">
+      <span></span><span></span><span></span>
     </div>
 
-    <div class="track bot">
-      <div class="chip">DONMAYAN IPTV</div>
-      <div class="chip">KANAL ARŞİVİ</div>
-      <div class="chip">HD</div>
-      <div class="chip">4K</div>
-      <div class="chip">TV BOX</div>
-      <div class="chip">MOBİL UYUMLU</div>
-      <div class="chip">PC UYUMLU</div>
-      <div class="chip">TEST AL</div>
-      <div class="chip">İLETİŞİME GEÇ</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="#paketler">Paketler</a>
+      <a href="#lisans-bolumu">Uygulamalar</a>
+      <a href="#sss">SSS</a>
+    </nav>
+
+    <div class="header-buttons">
+      <a href="https://wa.me/16892674393?text=Merhaba%20bayilik%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+         class="btn-outline"
+         target="_blank">Bayilik</a>
+
+      <a href="https://wa.me/16892674393?text=Merhaba%20Test%20Yay%C4%B1n%C4%B1%20Almak%20%C4%B0stiyorum."
+         class="btn-green"
+         target="_blank">Ücretsiz Dene!</a>
     </div>
   </div>
+</header>
+<section class="top-ticker-wrap">
+  <div class="top-ticker-label">
+    <i class="fas fa-bullhorn"></i>
+    <span></span>
+  </div>
 
-  <main class="wrap">
-    <section class="card">
-      <div class="content">
-        <div class="topbar">
-          <div class="pill"><span class="live-dot"></span> Yeni Tasarım Hazırlanıyor</div>
-          <div class="pill">Premium Arayüz • Çok Yakında</div>
-        </div>
+  <div class="top-ticker">
+    <div class="top-ticker-track">
+      <span>🇹🇷 18 Mart Çanakkale Zaferi’mizi saygı ve minnetle anıyoruz.</span>
+      <span>🌙 Ramazan Bayramı’nın sağlık, huzur ve mutluluk getirmesini dileriz.</span>
+      <span>📺 ADJOY IPTV ile her an yanında ve yayında!</span>
 
-        <div class="logo">ADJOY IPTV</div>
+      <span>🇹🇷 18 Mart Çanakkale Zaferi’mizi saygı ve minnetle anıyoruz.</span>
+      <span>🌙 Ramazan Bayramı’nın sağlık, huzur ve mutluluk getirmesini dileriz.</span>
+      <span>📺 ADJOY IPTV ile her an yanında ve yayında!</span>
+    </div>
+  </div>
+</section>
 
-        <h1 class="subtitle">Yeni Web Sitemiz Çok Yakında Yayında</h1>
 
-        <p class="desc">
-          ADJOY IPTV için daha premium, daha güçlü ve daha modern bir web deneyimi hazırlıyoruz.
-          Test almak, paket bilgisi öğrenmek veya hızlı destek almak için aşağıdaki WhatsApp butonundan bize ulaşabilirsin.
-        </p>
+  <section class="cinematic-slider">
+    <div class="floating-fx">
+      <span class="fx-obj" style="top:15%; left:10%; animation-delay:0s;">🍿</span>
+      <span class="fx-obj" style="top:25%; right:20%; animation-delay:2s;">⚽</span>
+      <span class="fx-obj" style="bottom:20%; left:15%; animation-delay:4s;">🎬</span>
+      <span class="fx-obj" style="bottom:40%; right:10%; animation-delay:1s;">🎮</span>
+    </div>
 
-        <div class="status">Tasarım aşamasında • İletişim aktif</div>
-
-        <div class="countdown">
-          <div class="time-box">
-            <span id="days">00</span>
-            <small>Gün</small>
+    <div class="slider-wrapper">
+      <div class="slide-item active">
+        <div class="slide-bg" style="background-image:url('img/sliders/s1.jpg');"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <div class="badge-trust"><i class="fas fa-check-circle"></i> ADJOY IPTV</div>
+          <h1 class="hero-title">Her An Yanında <br> ve <span class="gradient-text">Yayında!</span></h1>
+          <p class="hero-desc">Dünyanın tüm içerikleri 4K kalitesiyle ekranınızda.</p>
+          <div class="hero-btns">
+            <a href="#paketler" class="btn-hero primary">Paketleri İncele</a>
+            <a href="https://wa.me/16892674393" class="btn-hero glass"><i class="fab fa-whatsapp"></i> Test Et</a>
           </div>
-          <div class="time-box">
-            <span id="hours">00</span>
-            <small>Saat</small>
-          </div>
-          <div class="time-box">
-            <span id="minutes">00</span>
-            <small>Dakika</small>
-          </div>
-          <div class="time-box">
-            <span id="seconds">00</span>
-            <small>Saniye</small>
-          </div>
-        </div>
-
-        <div class="features">
-          <div class="feature">⚡ Hızlı geri dönüş</div>
-          <div class="feature">📺 Test talebi alımı açık</div>
-          <div class="feature">💬 WhatsApp üzerinden anında iletişim</div>
-        </div>
-
-        <div class="buttons">
-          <a class="btn btn-main" href="https://wa.me/16892674393?text=Merhaba,+ADJOY+IPTV+için+bilgi+almak+istiyorum" target="_blank" rel="noopener">
-            WhatsApp’tan İletişime Geç
-          </a>
-          <a class="btn btn-alt" href="tel:16892674393">
-            Telefon: 16892674393
-          </a>
-        </div>
-
-        <div class="note">Site açılışına kadar destek ve bilgi talepleri WhatsApp üzerinden devam etmektedir.</div>
-
-        <div class="footer">
-          © 2026 ADJOY IPTV<br>
-          Premium IPTV deneyimi çok yakında daha güçlü arayüzle burada.
         </div>
       </div>
-    </section>
-  </main>
 
-  <a class="wa-float" href="https://wa.me/16892674393?text=Merhaba,+ADJOY+IPTV+için+bilgi+almak+istiyorum" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <span class="wa-ico">✆</span>
-    <span>WhatsApp</span>
+      <div class="slide-item">
+        <div class="slide-bg" style="background-image:url('img/sliders/s2.jpg');"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <div class="badge-live">⚡ 4K YAYIN</div>
+          <h1 class="hero-title">Kolay, Akıcı <br> ve <span class="gradient-gold">Sorunsuz!</span></h1>
+          <p class="hero-desc">Türkiye’den Avrupa’ya tüm yayınlar ultra HD kalitede, donmadan seninle.</p>
+          <div class="hero-btns">
+            <a href="#paketler" class="btn-hero primary">Hemen Satın Al</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-item">
+        <div class="slide-bg" style="background-image:url('img/sliders/s3.jpg');"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <div class="badge-movie">🎬 GENİŞ ARŞİV</div>
+          <h1 class="hero-title">Ne İzlemek <br> <span class="gradient-pink">İstersin?</span></h1>
+          <p class="hero-desc">Her gün güncel içerikler. Keyif hiç bitmesin, eğlence yarım kalmasın.</p>
+          <div class="hero-btns">
+            <a href="#paketler" class="btn-hero primary">Arşive Göz At</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-item">
+        <div class="slide-bg" style="background-image:url('img/sliders/s4.jpg');"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <div class="badge-trust"><i class="fas fa-star"></i> PREMIUM DENEYİM</div>
+          <h1 class="hero-title">Donmadan İzle <br> <span class="gradient-text">Kaliteyi Hisset</span></h1>
+          <p class="hero-desc">Canlı TV, spor, film ve diziler için modern ve güçlü bir yayın deneyimi.</p>
+          <div class="hero-btns">
+            <a href="#paketler" class="btn-hero primary">Paketleri Gör</a>
+            <a href="#sss" class="btn-hero glass">SSS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slider-arrows">
+      <button type="button" onclick="prevSlide()" class="arrow-btn" aria-label="Önceki slide">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button type="button" onclick="nextSlide()" class="arrow-btn" aria-label="Sonraki slide">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+  <section id="paketler" class="adjoy-vip-green">
+    <span class="g-float" style="left:4%; font-size:64px; animation-duration:22s; animation-delay:0s;">⚽</span>
+    <span class="g-float" style="left:18%; font-size:74px; animation-duration:26s; animation-delay:1.7s;">🏀</span>
+    <span class="g-float" style="left:34%; font-size:68px; animation-duration:24s; animation-delay:0.9s;">✨</span>
+    <span class="g-float" style="left:52%; font-size:82px; animation-duration:30s; animation-delay:2.8s;">🔥</span>
+    <span class="g-float" style="left:70%; font-size:76px; animation-duration:28s; animation-delay:1.4s;">🎾</span>
+    <span class="g-float" style="left:86%; font-size:70px; animation-duration:25s; animation-delay:2.2s;">⚡</span>
+
+<section class="features-bar">
+  <div class="container features-grid">
+
+    <div class="feature-box">
+      <div class="feature-icon"><i class="fas fa-satellite-dish"></i></div>
+      <div class="feature-text">
+        <h3>Tüm Cihazlarda Uyumlu</h3>
+        <p>Smart TV, Telefon, Tablet ve PC üzerinden sorunsuz kullanım.</p>
+      </div>
+    </div>
+
+    <div class="feature-box">
+      <div class="feature-icon"><i class="fas fa-headset"></i></div>
+      <div class="feature-text">
+        <h3>7/24 Destek</h3>
+        <p>Anlık destek ekibimiz her zaman yanınızda.</p>
+      </div>
+    </div>
+
+    <div class="feature-box">
+      <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+      <div class="feature-text">
+        <h3>Anında Kurulum</h3>
+        <p>Satın aldıktan sonra hemen kullanmaya başlayın.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <div class="g-wrap" id="g-vip">
+      <div class="g-head">
+        <span class="g-spark"></span>
+        <div class="g-title">
+          <div class="g-brand">
+            <img class="g-brand-logo" src="img/logo.png" alt="ADJOY Logo">
+
+            
+            <span class="g-brand-badge">VIP PANEL</span>
+          </div>
+          <h2>PAKET SEÇENEKLERİ</h2>
+        </div>
+        <span class="g-spark"></span>
+      </div>
+
+      <p class="g-sub">Güçlü altyapı • Üst düzey güvenlik • 7/24 destek</p>
+
+      <div class="g-tabs" role="tablist" aria-label="Bölge Seçimi">
+        <button type="button" class="g-tab" data-region="tr" aria-checked="true" role="tab">
+          <img src="img/flags/tr.png" class="g-flag" alt="TR"> Türkiye
+        </button>
+        <button type="button" class="g-tab" data-region="eu" aria-checked="false" role="tab">
+          <img src="img/flags/eu.png" class="g-flag" alt="EU"> Avrupa
+        </button>
+      </div>
+
+      <div class="g-grid" id="g-grid"></div>
+
+      <div class="g-info">
+        <div class="g-info-badge">Hesap koruması, sağlam altyapı ve hızlı aktivasyon ile VIP deneyim sunar.</div>
+        <div class="g-info-text">
+         
+          
+          
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="lisans-bolumu" class="apps-showcase">
+  <div class="container-wide">
+    <div class="apps-top-head">
+      <span class="apps-top-badge">📡 Geniş Kanal Yelpazesi</span>
+   
+
+
+    <div class="device-panel">
+      <div class="device-panel-head">
+        <h3>İstediğin yerde takılmadan izle!</h3>
+        <p></p>
+      </div>
+
+      <div class="device-grid-modern">
+        <div class="device-item">
+          <div class="device-icon"><i class="fas fa-tv"></i></div>
+          <span>Smart TV</span>
+        </div>
+
+        <div class="device-item">
+          <div class="device-icon"><i class="fab fa-android"></i></div>
+          <span>Android Box</span>
+        </div>
+
+        <div class="device-item">
+          <div class="device-icon"><i class="fab fa-apple"></i></div>
+          <span>iPhone / iPad</span>
+        </div>
+
+        <div class="device-item">
+          <div class="device-icon"><i class="fab fa-gripfire"></i></div>
+          <span>Fire Stick</span>
+        </div>
+
+        <div class="device-item">
+          <div class="device-icon"><i class="fas fa-laptop"></i></div>
+          <span>PC / Mac</span>
+        </div>
+
+        <div class="device-item">
+          <div class="device-icon"><i class="fas fa-mobile-alt"></i></div>
+          <span>IPTV Smart Player</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="nedenbiz-section">
+    <div class="nedenbiz-container">
+      <h2 class="nedenbiz-title">Neden <span>ADJOY IPTV</span>?</h2>
+      <p class="nedenbiz-intro">
+        ADJOY IPTV, geleneksel televizyon anlayışını geride bırakman için tasarlandı. İnternetin olduğu her yerde, her cihazdan sınırsız yayın keyfi sunar.
+      </p>
+      <ul class="nedenbiz-list">
+        <li>Her cihaza uyumlu altyapı (TV, Telefon, Tablet, PC)</li>
+        <li>En güncel içeriklere anında erişim</li>
+        <li>SD, HD, FHD ve 4K yayın seçenekleri</li>
+        <li>Kesintisiz spor, film, dizi ve belgesel kanalları</li>
+        <li>Anlık teknik destek ve %100 müşteri memnuniyeti</li>
+      </ul>
+    </div>
+    
+  </section>
+
+  <section id="sss" class="modern-faq">
+    <div class="faq-container">
+      <div class="faq-header">
+        <span class="faq-badge">MERAK ETTİKLERİNİZ</span>
+        <h2 class="faq-title">Sıkça Sorulan <span class="highlight">Sorular</span></h2>
+        <p class="faq-desc">Aklınıza takılan tüm soruların cevapları burada. Başka sorunuz varsa WhatsApp'tan yazabilirsiniz.</p>
+      </div>
+
+      <div class="faq-wrapper">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Test yayını ile abonelik içeriği aynı mı?</span>
+            <i class="fas fa-plus icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Evet, kesinlikle aynıdır. Test yayınları, sistemimizi ve kanal kalitemizi görmeniz için ana sunucumuzdan açılır. Satın aldığınızda ne izleyecekseniz, testte de onu izlersiniz.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>İçerikler ve kanallar güncelleniyor mu?</span>
+            <i class="fas fa-plus icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Evet. Teknik ekibimiz her gün yeni çıkan dizileri, vizyon filmlerini ve değişen kanal frekanslarını otomatik olarak günceller. Sizin ekstra bir şey yapmanıza gerek yoktur.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Ödeme yaptım, hesabı nasıl aktif ederim?</span>
+            <i class="fas fa-plus icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Ödeme işleminiz onaylandıktan sonra üyelik bilgileriniz ve kurulum rehberiniz WhatsApp veya Email üzerinden size iletilir.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Yayınların kalitesi nedir?</span>
+            <i class="fas fa-plus icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yayınlarımız internet hızınıza göre otomatik optimize edilir. Kanalların büyük bölümü HD, FHD ve 4K Ultra HD kalitesindedir. Donma yaşamamanız için güçlü CDN sunucuları kullanıyoruz.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Nasıl kurulum yaparım?</span>
+            <i class="fas fa-plus icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Kurulum çok basittir. Smart TV, Telefon, Tablet veya Bilgisayar... Hangi cihazı kullanıyorsanız ona uygun uygulamayı indirmeniz yeterli. Size özel linki girerek kısa sürede izlemeye başlarsınız.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Test paketi nasıl alabilirim?</span>
+            <i class="fas fa-plus icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>WhatsApp hattımız üzerinden "Test Almak İstiyorum" yazmanız yeterlidir. Ekibimiz size ücretsiz deneme hesabı tanımlayacaktır.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Hangi cihazlarda izleyebilirim?</span>
+            <i class="fas fa-plus icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>ADJOY IPTV; Samsung/LG Smart TV'ler, Android TV Box, Apple TV, Telefon, Tablet, Bilgisayar ve farklı uyumlu cihazlarda çalışır.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>İnternet hızım kaç MB olmalıdır?</span>
+            <i class="fas fa-plus icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>SD yayınlar için 8 Mbps, HD yayınlar için 16 Mbps, 4K yayınlar için ise stabil bir 25-35 Mbps internet hızı öneriyoruz.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<section class="afis-slider">
+  <div class="afis-container">
+    <img src="https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" alt="Avatar 2">
+    <img src="https://image.tmdb.org/t/p/w500/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg" alt="The Godfather">
+    <img src="https://image.tmdb.org/t/p/w500/wHa6KOJAoNTFLFtp7wguUJKSnju.jpg" alt="Frozen II">
+    <img src="https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg" alt="Titanic">
+    <img src="https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg" alt="Avengers Endgame">
+    <img src="https://image.tmdb.org/t/p/w500/vRQnzOn4HjIMX4LBq9nHhFXbsSu.jpg" alt="Avengers Age of Ultron">
+    <img src="https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg" alt="Avengers Infinity War">
+    <img src="https://image.tmdb.org/t/p/w500/sRLC052ieEzkQs9dEtPMfFxYkej.jpg" alt="Finding Dory">
+    <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="Interstellar">
+    <img src="https://image.tmdb.org/t/p/w500/xRWht48C2V8XNfzvPehyClOvDni.jpg" alt="Ready Player One">
+    <img src="https://image.tmdb.org/t/p/w500/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg" alt="Black Panther">
+    <img src="https://image.tmdb.org/t/p/w500/ktofZ9Htrjiy0P6LEowsDaxd3Ri.jpg" alt="Furious 7">
+    <img src="https://image.tmdb.org/t/p/w500/2bXbqYdUdNVa8VIWXVfclP2ICtT.jpg" alt="The Lion King">
+    <img src="https://image.tmdb.org/t/p/w500/kU3B75TyRiCgE270EyZnHjfivoq.jpg" alt="Thor Ragnarok">
+    <img src="https://image.tmdb.org/t/p/w500/nNmJRkg8wWnRmzQDe2FwKbPIsJV.jpg" alt="The Avengers">
+    <img src="https://image.tmdb.org/t/p/w500/lnWkyG3LLgbbrIEeyl5mK5VRFe4.jpg" alt="Frozen">
+    <img src="https://image.tmdb.org/t/p/w500/v5HlmJK9bdeHxN2QhaFP1ivjX3U.jpg" alt="Captain America Civil War">
+    <img src="https://image.tmdb.org/t/p/w500/hziiv14OpD73u9gAak4XDDfBKa2.jpg" alt="Harry Potter DH Part 2">
+    <img src="https://image.tmdb.org/t/p/w500/xJWPZIYOEFIjZpBL7SVBGnzRYXp.jpg" alt="Spider-Man No Way Home">
+
+    <!-- tekrar akış için -->
+    <img src="https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" alt="Avatar 2">
+    <img src="https://image.tmdb.org/t/p/w500/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg" alt="The Godfather">
+    <img src="https://image.tmdb.org/t/p/w500/wHa6KOJAoNTFLFtp7wguUJKSnju.jpg" alt="Frozen II">
+    <img src="https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg" alt="Titanic">
+    <img src="https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg" alt="Avengers Endgame">
+  </div>
+  
+</section>
+
+
+  <section class="super-slogan-section">
+    <div class="slogan-container">
+      <h2 class="mega-slogan">HER AN YANINDA VE YAYINDA!</h2>
+    </div>
+  </section>
+  
+
+  <footer class="site-footer">
+    <div class="footer-wave">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+      </svg>
+    </div>
+
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <h3 class="footer-logo">ADJOY <span>IPTV</span></h3>
+          <p class="footer-desc">Türkiye'nin en gelişmiş, donmayan ve 4K yayın sunan lider IPTV sağlayıcısı. Eğlenceyi evinize getiriyoruz.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/adjoytv" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="https://api.whatsapp.com/send/?phone=16892674393&text=Merhaba+ADJOY+IPTV+hakk%C4%B1nda+bilgi+almak+istiyorum.&type=phone_number&app_absent=0" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/adjoytv" class="social-btn"><i class="fab fa-telegram-plane"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hızlı Menü</h4>
+          <ul class="footer-links">
+            <li><a href="#">Ana Sayfa</a></li>
+            <li><a href="#paketler">Paketler</a></li>
+            <li><a href="#sss">Sıkça Sorulanlar</a></li>
+            <li><a href="#">Bayilik Başvurusu</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Bilgilendirme</h4>
+          <ul class="footer-links">
+            <li><a href="#">Kurulum Rehberi</a></li>
+            <li><a href="#">Kullanım Şartları</a></li>
+            <li><a href="#">Gizlilik Politikası</a></li>
+            <li><a href="#">İletişim</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Bize Ulaşın</h4>
+          <ul class="contact-list">
+            <li><i class="fab fa-whatsapp"></i> +1 (689) 267-4393</li>
+            <li><i class="far fa-envelope"></i> info@adjoyiptv.com</li>
+            <li><i class="fas fa-clock"></i> 7/24 Canlı Destek</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 <strong>ADJOY IPTV</strong>. Tüm hakları saklıdır.</p>
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fas fa-university"></i>
+          <i class="fab fa-bitcoin"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/16892674393?text=Merhaba%20ADJOY%20IPTV%20hakkında%20bilgi%20almak%20istiyorum." class="whatsapp-float" target="_blank" aria-label="WhatsApp ile sohbet et">
+    <i class="fab fa-whatsapp"></i>
   </a>
 
-  <script>
-    const targetDate = new Date("2026-03-20T00:00:00").getTime();
-
-    const daysEl = document.getElementById("days");
-    const hoursEl = document.getElementById("hours");
-    const minutesEl = document.getElementById("minutes");
-    const secondsEl = document.getElementById("seconds");
-
-    function pad(n){
-      return String(n).padStart(2, "0");
-    }
-
-    function updateCountdown(){
-      const now = new Date().getTime();
-      let distance = targetDate - now;
-
-      if(distance < 0){
-        daysEl.textContent = "00";
-        hoursEl.textContent = "00";
-        minutesEl.textContent = "00";
-        secondsEl.textContent = "00";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      daysEl.textContent = pad(days);
-      hoursEl.textContent = pad(hours);
-      minutesEl.textContent = pad(minutes);
-      secondsEl.textContent = pad(seconds);
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
