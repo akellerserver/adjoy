@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>ADJOY IPTV Paketleri | IPTV Fiyatları, Test Yayını ve Satın Al</title>
-  <meta name="description" content="ADJOY IPTV paketlerini inceleyin. Türkiye ve Avrupa paket seçenekleri, test yayını talebi, hızlı kurulum desteği ve güvenli aktivasyon tek sayfada."/>
+  <meta name="description" content="ADJOY IPTV paketlerini inceleyin. Türkiye ve Avrupa paket seçenekleri, test yayını talebi, hızlı kurulum desteği ve hızlı başlangıç tek sayfada."/>
   <meta name="robots" content="index, follow"/>
   <meta name="author" content="ADJOY IPTV"/>
   <link rel="canonical" href="https://adjoytv.com/paketler.html"/>
@@ -26,26 +26,880 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+
+  <!-- Mevcut ortak CSS'in -->
   <link rel="stylesheet" href="css/style.css"/>
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"ADJOY IPTV",
-    "url":"https://adjoytv.com/",
-    "logo":"https://adjoytv.com/img/logo.png",
-    "sameAs":[
-      "https://www.instagram.com/adjoytv"
-    ],
-    "contactPoint":[{
-      "@type":"ContactPoint",
-      "telephone":"+1-689-267-4393",
-      "contactType":"customer support",
-      "availableLanguage":["tr","en"]
-    }]
-  }
-  </script>
+  <style>
+    :root{
+      --bg:#07111b;
+      --bg2:#0a1624;
+      --card:rgba(255,255,255,.05);
+      --card-border:rgba(255,255,255,.08);
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.76);
+      --green:#22e06e;
+      --green2:#19c45e;
+      --yellow:#ffd44a;
+      --shadow:0 18px 50px rgba(0,0,0,.28);
+      --radius:24px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:linear-gradient(180deg,#04101a 0%, #07111b 35%, #0b1726 100%);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    img{max-width:100%;display:block}
+    a{text-decoration:none}
+    .container{width:min(1180px,calc(100% - 32px));margin:0 auto}
+    .container-wide{width:min(1280px,calc(100% - 32px));margin:0 auto}
+
+    /* HEADER */
+    .site-header{
+      position:fixed;
+      top:0;left:0;width:100%;
+      z-index:999;
+      background:rgba(3,10,18,.86);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .site-header .container{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .logo-text a{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      font-size:21px;
+      white-space:nowrap;
+    }
+
+    .logo-text img{
+      width:46px;
+      height:46px;
+      object-fit:contain;
+      border-radius:50%;
+    }
+
+    .logo-text .green{color:var(--green)}
+    .logo-text .white{color:#fff}
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+    }
+
+    .nav-links a{
+      color:#fff;
+      font-weight:700;
+      font-size:15px;
+      transition:.25s ease;
+    }
+
+    .nav-links a:hover{color:var(--green)}
+
+    .header-buttons{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .btn-outline,
+    .btn-green,
+    .btn-hero{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.25s ease;
+      white-space:nowrap;
+    }
+
+    .btn-outline{
+      min-height:48px;
+      padding:0 22px;
+      color:var(--yellow);
+      border:2px solid var(--yellow);
+      background:transparent;
+    }
+
+    .btn-outline:hover{
+      background:rgba(255,212,74,.12);
+      transform:translateY(-2px);
+    }
+
+    .btn-green{
+      min-height:50px;
+      padding:0 24px;
+      background:linear-gradient(135deg,var(--green),#43f38f);
+      color:#fff;
+      box-shadow:0 12px 30px rgba(34,224,110,.26);
+    }
+
+    .btn-green:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 38px rgba(34,224,110,.32);
+    }
+
+    .burger{
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      cursor:pointer;
+    }
+    .burger span{
+      width:26px;height:3px;border-radius:10px;background:#fff;
+    }
+
+    /* HERO */
+    .page-hero{
+      position:relative;
+      padding:150px 0 92px;
+      background:
+        radial-gradient(circle at top left, rgba(34,224,110,.16), transparent 30%),
+        radial-gradient(circle at top right, rgba(255,212,74,.09), transparent 24%),
+        linear-gradient(180deg,#04101b 0%, #071522 100%);
+      overflow:hidden;
+    }
+
+    .page-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.22));
+      pointer-events:none;
+    }
+
+    .page-hero .container{position:relative;z-index:2}
+    .page-hero-inner{max-width:920px}
+
+    .page-badge,
+    .mini-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.06);
+      color:#aaf7c9;
+      font-weight:800;
+      letter-spacing:.3px;
+      margin-bottom:18px;
+    }
+
+    .page-hero h1{
+      font-size:clamp(34px,5vw,62px);
+      line-height:1.06;
+      margin:0 0 16px;
+      font-weight:900;
+      color:#fff;
+    }
+
+    .page-hero p{
+      font-size:18px;
+      line-height:1.85;
+      color:var(--muted);
+      margin:0;
+      max-width:860px;
+    }
+
+    .hero-btns{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .btn-hero{
+      min-height:56px;
+      padding:0 24px;
+      font-size:16px;
+    }
+
+    .btn-hero.primary{
+      background:linear-gradient(135deg,var(--green),#41f18b);
+      color:#fff;
+      box-shadow:0 14px 34px rgba(34,224,110,.24);
+    }
+
+    .btn-hero.primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 20px 40px rgba(34,224,110,.30);
+    }
+
+    .btn-hero.glass{
+      color:#fff;
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.07);
+      backdrop-filter:blur(10px);
+    }
+
+    .btn-hero.glass:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.11);
+    }
+
+    /* SECTIONS */
+    .package-intro-section,
+    .package-content-section,
+    .cta-band-section{
+      padding:88px 0;
+    }
+
+    .package-intro-section{background:#07111b}
+    .package-content-section{background:linear-gradient(180deg,#08131f 0%,#0b1827 100%)}
+    .cta-band-section{background:#091522}
+
+    .section-heading{
+      max-width:920px;
+      margin:0 auto 42px;
+      text-align:center;
+    }
+
+    .section-heading h2{
+      font-size:clamp(28px,4vw,46px);
+      line-height:1.12;
+      margin:0 0 14px;
+      font-weight:900;
+    }
+
+    .section-heading p{
+      margin:0;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.8;
+    }
+
+    /* INFO GRID */
+    .info-grid,
+    .content-columns{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:24px;
+    }
+
+    .info-card,
+    .content-box{
+      background:var(--card);
+      border:1px solid var(--card-border);
+      border-radius:var(--radius);
+      padding:28px 24px;
+      box-shadow:var(--shadow);
+      transition:.25s ease;
+    }
+
+    .info-card:hover,
+    .content-box:hover{
+      transform:translateY(-6px);
+      border-color:rgba(34,224,110,.22);
+    }
+
+    .info-card i{
+      font-size:28px;
+      color:var(--green);
+      margin-bottom:14px;
+    }
+
+    .info-card h3,
+    .content-box h3{
+      margin:0 0 12px;
+      font-size:24px;
+      font-weight:800;
+      color:#fff;
+    }
+
+    .info-card p,
+    .content-box p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.78;
+      font-size:16px;
+    }
+
+    /* PACKAGE AREA */
+    .page-packages-main{
+      position:relative;
+      padding:80px 0 90px;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at center top, rgba(34,224,110,.14), transparent 30%),
+        linear-gradient(180deg,#d4ffe4 0%, #dff7e7 10%, #0b1725 10%, #0b1725 100%);
+    }
+
+    .g-float{
+      position:absolute;
+      top:-30px;
+      opacity:.08;
+      pointer-events:none;
+      animation:floatUp linear infinite;
+    }
+
+    @keyframes floatUp{
+      0%{transform:translateY(0) rotate(0deg)}
+      100%{transform:translateY(110vh) rotate(360deg)}
+    }
+
+    .features-bar{
+      margin-bottom:42px;
+    }
+
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:24px;
+    }
+
+    .feature-box{
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      padding:26px 22px;
+      border-radius:24px;
+      background:rgba(255,255,255,.70);
+      border:1px solid rgba(0,0,0,.04);
+      box-shadow:0 12px 30px rgba(0,0,0,.08);
+      color:#0b1827;
+    }
+
+    .feature-icon{
+      width:56px;
+      height:56px;
+      border-radius:18px;
+      background:linear-gradient(135deg,#dfffe9,#b8f7cf);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 56px;
+      color:#0cb458;
+      font-size:22px;
+    }
+
+    .feature-text h3{
+      margin:0 0 8px;
+      font-size:26px;
+      line-height:1.15;
+      font-weight:900;
+      color:#0b1827;
+    }
+
+    .feature-text p{
+      margin:0;
+      color:rgba(11,24,39,.70);
+      line-height:1.65;
+      font-size:16px;
+    }
+
+    .g-wrap{
+      position:relative;
+      width:min(1180px,calc(100% - 32px));
+      margin:0 auto;
+      padding:42px 22px 24px;
+      border-radius:34px;
+      background:
+        radial-gradient(circle at top center, rgba(34,224,110,.10), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 28px 65px rgba(0,0,0,.28);
+      backdrop-filter:blur(10px);
+    }
+
+    .g-head{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      margin-bottom:10px;
+    }
+
+    .g-spark{
+      width:54px;height:2px;
+      background:linear-gradient(90deg,transparent,var(--green),transparent);
+      border-radius:20px;
+    }
+
+    .g-brand{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    .g-brand-logo{
+      width:38px;height:38px;border-radius:50%;object-fit:contain;
+    }
+
+    .g-brand-badge{
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      color:#c6ffd9;
+      font-size:13px;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.10);
+    }
+
+    .g-title{text-align:center}
+    .g-title h2{
+      margin:0;
+      font-size:clamp(30px,4vw,52px);
+      line-height:1.1;
+      font-weight:900;
+      color:#fff;
+    }
+
+    .g-sub{
+      text-align:center;
+      color:rgba(255,255,255,.76);
+      margin:0 0 28px;
+      font-size:17px;
+    }
+
+    .g-tabs{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:28px;
+    }
+
+    .g-tab{
+      min-height:54px;
+      padding:0 18px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      font-weight:800;
+      font-size:15px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      cursor:pointer;
+      transition:.25s ease;
+    }
+
+    .g-tab:hover{transform:translateY(-2px)}
+    .g-tab.active{
+      background:linear-gradient(135deg,var(--green),#3bef88);
+      color:#fff;
+      border-color:transparent;
+      box-shadow:0 16px 36px rgba(34,224,110,.24);
+    }
+
+    .g-flag{
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .g-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:22px;
+      margin-bottom:34px;
+    }
+
+    .plan-card{
+      position:relative;
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:28px;
+      padding:26px 20px 22px;
+      box-shadow:0 18px 42px rgba(0,0,0,.22);
+      overflow:hidden;
+      transition:.25s ease;
+    }
+
+    .plan-card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(34,224,110,.22);
+    }
+
+    .plan-card.popular{
+      border-color:rgba(255,212,74,.42);
+      box-shadow:0 22px 48px rgba(0,0,0,.28);
+    }
+
+    .plan-badge{
+      position:absolute;
+      top:14px;right:14px;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      background:rgba(255,212,74,.14);
+      color:var(--yellow);
+      border:1px solid rgba(255,212,74,.28);
+    }
+
+    .plan-duration{
+      color:#b8ffd2;
+      font-size:15px;
+      font-weight:800;
+      margin-bottom:8px;
+      text-transform:uppercase;
+      letter-spacing:.4px;
+    }
+
+    .plan-price{
+      display:flex;
+      align-items:flex-end;
+      gap:8px;
+      margin-bottom:18px;
+    }
+
+    .plan-price strong{
+      font-size:42px;
+      line-height:1;
+      font-weight:900;
+      color:#fff;
+    }
+
+    .plan-price span{
+      color:rgba(255,255,255,.68);
+      font-weight:700;
+      font-size:15px;
+      padding-bottom:5px;
+    }
+
+    .plan-desc{
+      color:rgba(255,255,255,.78);
+      line-height:1.72;
+      font-size:15px;
+      margin-bottom:18px;
+      min-height:74px;
+    }
+
+    .plan-list{
+      list-style:none;
+      padding:0;
+      margin:0 0 22px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .plan-list li{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      color:rgba(255,255,255,.80);
+      font-size:15px;
+      line-height:1.55;
+    }
+
+    .plan-list i{
+      color:var(--green);
+      margin-top:3px;
+      font-size:14px;
+    }
+
+    .plan-btn{
+      width:100%;
+      min-height:50px;
+      border:none;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--green),#3cef89);
+      color:#fff;
+      font-weight:900;
+      font-size:15px;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:0 14px 30px rgba(34,224,110,.18);
+    }
+
+    .plan-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 34px rgba(34,224,110,.26);
+    }
+
+    .g-info{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .g-info-badge,
+    .g-info-text{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      padding:24px;
+    }
+
+    .g-info-badge{
+      color:#d6ffe4;
+      font-size:20px;
+      line-height:1.55;
+      font-weight:800;
+    }
+
+    .g-info-text p{
+      color:rgba(255,255,255,.78);
+      line-height:1.82;
+      margin:0 0 14px;
+    }
+
+    .g-info-text p:last-child{margin-bottom:0}
+
+    /* CTA BAND */
+    .cta-band{
+      display:grid;
+      grid-template-columns:1.2fr auto;
+      align-items:center;
+      gap:24px;
+      padding:36px;
+      border-radius:30px;
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        linear-gradient(135deg, rgba(34,224,110,.12), rgba(255,212,74,.07)),
+        rgba(255,255,255,.04);
+      box-shadow:var(--shadow);
+    }
+
+    .cta-band h2{
+      margin:8px 0 12px;
+      font-size:clamp(28px,4vw,42px);
+      line-height:1.12;
+      font-weight:900;
+    }
+
+    .cta-band p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.78;
+    }
+
+    .cta-band-buttons{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    /* SLOGAN */
+    .super-slogan-section{
+      padding:34px 0 42px;
+      background:#07111b;
+    }
+
+    .slogan-container{
+      width:min(1180px,calc(100% - 32px));
+      margin:0 auto;
+      text-align:center;
+    }
+
+    .mega-slogan{
+      margin:0;
+      font-size:clamp(28px,5vw,72px);
+      font-weight:900;
+      line-height:1.08;
+      letter-spacing:.5px;
+      background:linear-gradient(135deg,#fff,#b7ffd1,#ffe792);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    /* FOOTER */
+    .site-footer{
+      position:relative;
+      background:#050d16;
+      padding-top:50px;
+      overflow:hidden;
+    }
+
+    .footer-container{
+      width:min(1180px,calc(100% - 32px));
+      margin:0 auto;
+      padding:30px 0 24px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr 1fr;
+      gap:26px;
+      padding-bottom:30px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-logo{
+      margin:0 0 12px;
+      font-size:28px;
+      font-weight:900;
+    }
+    .footer-logo span{color:var(--green)}
+
+    .footer-desc{
+      color:rgba(255,255,255,.72);
+      line-height:1.75;
+      margin:0 0 18px;
+    }
+
+    .social-links{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .social-btn{
+      width:44px;height:44px;border-radius:14px;
+      display:flex;align-items:center;justify-content:center;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      color:#fff;
+      transition:.25s ease;
+    }
+    .social-btn:hover{
+      transform:translateY(-2px);
+      background:rgba(34,224,110,.12);
+      color:var(--green);
+    }
+
+    .footer-col h4{
+      margin:0 0 14px;
+      font-size:18px;
+      font-weight:800;
+      color:#fff;
+    }
+
+    .footer-links,
+    .contact-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .footer-links a,
+    .contact-list li{
+      color:rgba(255,255,255,.72);
+      line-height:1.6;
+      transition:.25s ease;
+    }
+
+    .footer-links a:hover{color:var(--green)}
+
+    .footer-bottom{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding-top:24px;
+      flex-wrap:wrap;
+    }
+
+    .footer-bottom p{
+      margin:0;
+      color:rgba(255,255,255,.70);
+    }
+
+    .payment-icons{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      color:rgba(255,255,255,.70);
+      font-size:24px;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:62px;
+      height:62px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#25d366,#16b859);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:30px;
+      box-shadow:0 18px 42px rgba(37,211,102,.35);
+      z-index:999;
+      animation:waPulse 2s infinite;
+    }
+
+    @keyframes waPulse{
+      0%{box-shadow:0 0 0 0 rgba(37,211,102,.40)}
+      70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}
+      100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:1100px){
+      .g-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .g-info{grid-template-columns:1fr}
+      .features-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .nav-links{gap:18px}
+    }
+
+    @media (max-width:900px){
+      .burger{display:flex}
+      .nav-links{
+        position:absolute;
+        top:82px;
+        left:16px;
+        right:16px;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+        padding:20px;
+        border-radius:22px;
+        background:rgba(5,12,20,.96);
+        border:1px solid rgba(255,255,255,.08);
+        box-shadow:0 20px 50px rgba(0,0,0,.28);
+      }
+
+      .nav-links.show{display:flex}
+      .header-buttons{display:none}
+      .info-grid,
+      .content-columns,
+      .cta-band{
+        grid-template-columns:1fr;
+      }
+
+      .cta-band-buttons{justify-content:flex-start}
+      .footer-grid{grid-template-columns:1fr}
+    }
+
+    @media (max-width:767px){
+      .page-hero{padding:132px 0 72px}
+      .page-hero h1{font-size:34px}
+      .page-hero p,
+      .section-heading p{font-size:16px}
+      .hero-btns{flex-direction:column;align-items:stretch}
+      .g-grid{grid-template-columns:1fr}
+      .g-wrap{padding:34px 16px 18px}
+      .feature-text h3{font-size:22px}
+      .plan-price strong{font-size:36px}
+      .cta-band{padding:28px 20px}
+      .footer-bottom{flex-direction:column;align-items:flex-start}
+    }
+  </style>
 </head>
 <body>
 
@@ -90,16 +944,18 @@
         <span class="page-badge">ADJOY IPTV PAKETLERİ</span>
         <h1>IPTV Paketleri, Fiyatlar ve Hızlı Başlangıç Rehberi</h1>
         <p>
-          ADJOY IPTV paketleri; canlı TV, spor yayınları, film arşivi, dizi içerikleri ve farklı cihazlarda
-          kolay kullanım isteyen kullanıcılar için hazırlanmıştır. Bu sayfada Türkiye ve Avrupa paket seçeneklerini,
-          kullanım süresine göre planları ve satın alma öncesi dikkat edilmesi gereken temel noktaları görebilirsiniz.
+          ADJOY IPTV paketleri; canlı TV, spor yayınları, film arşivi, dizi içerikleri ve farklı cihazlarda kolay kullanım isteyen kullanıcılar için hazırlanmıştır.
+          Bu sayfada Türkiye ve Avrupa paket seçeneklerini, kullanım süresine göre planları ve satın alma öncesi dikkat edilmesi gereken temel noktaları görebilirsiniz.
         </p>
 
         <div class="hero-btns">
           <a href="https://wa.me/16892674393?text=Merhaba%20paketler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-             class="btn-hero primary" target="_blank">Bilgi Al</a>
+             class="btn-hero primary"
+             target="_blank">Bilgi Al</a>
+
           <a href="https://wa.me/16892674393?text=Merhaba%20Test%20Yay%C4%B1n%C4%B1%20Almak%20%C4%B0stiyorum."
-             class="btn-hero glass" target="_blank"><i class="fab fa-whatsapp"></i> Test Yayını İste</a>
+             class="btn-hero glass"
+             target="_blank"><i class="fab fa-whatsapp"></i> Test Yayını İste</a>
         </div>
       </div>
     </div>
@@ -111,9 +967,8 @@
         <span class="mini-badge">NEDEN BU SAYFA ÖNEMLİ?</span>
         <h2>Doğru Paket Seçimi İçin Net Bilgi</h2>
         <p>
-          Kullanıcıların büyük kısmı “iptv fiyatları”, “iptv satın al”, “en iyi iptv paketleri” gibi aramalarla
-          doğrudan karar vermeye yakın bir aşamada gelir. Bu yüzden burada sadece fiyat değil; kullanım mantığı,
-          destek, aktivasyon ve cihaz uyumluluğu da açık şekilde sunulmalıdır.
+          Kullanıcıların büyük kısmı “iptv fiyatları”, “iptv satın al”, “en iyi iptv paketleri” gibi aramalarla doğrudan karar vermeye yakın bir aşamada gelir.
+          Bu yüzden burada sadece fiyat değil; kullanım mantığı, destek, aktivasyon ve cihaz uyumluluğu da açık şekilde sunulmalıdır.
         </p>
       </div>
 
@@ -121,7 +976,7 @@
         <div class="info-card">
           <i class="fas fa-bolt"></i>
           <h3>Hızlı Aktivasyon</h3>
-          <p>Ödeme sonrası kurulum için gerekli bilgiler hızlı şekilde paylaşılır ve kullanım süreci uzatılmaz.</p>
+          <p>Ödeme sonrası kurulum için gerekli bilgiler hızlı şekilde paylaşılır ve kullanım süreci gereksiz uzamaz.</p>
         </div>
 
         <div class="info-card">
@@ -139,10 +994,10 @@
     </div>
   </section>
 
-  <section id="paketler" class="adjoy-vip-green page-packages-main">
+  <section id="paketler" class="page-packages-main">
     <span class="g-float" style="left:4%; font-size:64px; animation-duration:22s; animation-delay:0s;">⚽</span>
     <span class="g-float" style="left:18%; font-size:74px; animation-duration:26s; animation-delay:1.7s;">🏀</span>
-    <span class="g-float" style="left:34%; font-size:68px; animation-duration:24s; animation-delay:0.9s;">✨</span>
+    <span class="g-float" style="left:34%; font-size:68px; animation-duration:24s; animation-delay:.9s;">✨</span>
     <span class="g-float" style="left:52%; font-size:82px; animation-duration:30s; animation-delay:2.8s;">🔥</span>
     <span class="g-float" style="left:70%; font-size:76px; animation-duration:28s; animation-delay:1.4s;">🎾</span>
     <span class="g-float" style="left:86%; font-size:70px; animation-duration:25s; animation-delay:2.2s;">⚡</span>
@@ -191,11 +1046,11 @@
       <p class="g-sub">Güçlü altyapı • Hızlı yönlendirme • Kurulum desteği</p>
 
       <div class="g-tabs" role="tablist" aria-label="Bölge Seçimi">
-        <button type="button" class="g-tab" data-region="tr" aria-checked="true" role="tab">
-          <img src="img/flags/tr.png" class="g-flag" alt="Türkiye IPTV paketleri"> Türkiye
+        <button type="button" class="g-tab active" data-region="tr">
+          <img src="img/flags/tr.png" class="g-flag" alt="Türkiye"> Türkiye
         </button>
-        <button type="button" class="g-tab" data-region="eu" aria-checked="false" role="tab">
-          <img src="img/flags/eu.png" class="g-flag" alt="Avrupa IPTV paketleri"> Avrupa
+        <button type="button" class="g-tab" data-region="eu">
+          <img src="img/flags/eu.png" class="g-flag" alt="Avrupa"> Avrupa
         </button>
       </div>
 
@@ -205,11 +1060,11 @@
         <div class="g-info-badge">
           Paket seçerken sadece fiyatı değil, kullanım süresi, cihaz yapısı ve destek ihtiyacınızı da değerlendirin.
         </div>
+
         <div class="g-info-text">
           <p>
-            Kısa süreli kullanım isteyenler için aylık planlar daha pratik olabilirken, daha uzun dönem düşünen kullanıcılar
-            için çok aylı paketler daha dengeli bir tercih olabilir. Özellikle düzenli kullanım planlayan kullanıcılar,
-            kurulum desteği ve hesap yönetimi açısından daha uzun süreli seçeneklerden daha rahat faydalanır.
+            Kısa süreli kullanım isteyenler için aylık planlar daha pratik olabilirken, daha uzun dönem düşünen kullanıcılar için çok aylı paketler daha dengeli bir tercih olabilir.
+            Özellikle düzenli kullanım planlayan kullanıcılar, kurulum desteği ve hesap yönetimi açısından daha uzun süreli seçeneklerden daha rahat faydalanır.
           </p>
           <p>
             Türkiye ve Avrupa paketleri ayrı ayrı sunulduğu için, bulunduğunuz bölgeye göre doğru planı seçmeniz önemlidir.
@@ -226,9 +1081,8 @@
         <span class="mini-badge">İÇERİK VE DENEYİM</span>
         <h2>Bu Sayfada Sadece Fiyat Değil, Güven de Var</h2>
         <p>
-          Arama motorlarında üst sıralara çıkmak için sadece “en kaliteli”, “en iyi”, “donmayan” gibi kelimeleri tekrar etmek yetmez.
-          Kullanıcı aradığı şeyi bulmalı; yani paketin ne sunduğunu, nasıl kullanılacağını, hangi cihazlarda çalıştığını ve nasıl destek alınacağını
-          açık şekilde görmelidir.
+          Kullanıcı bir paket sayfasına geldiğinde yalnızca rakam görmek istemez; hangi cihazlarda kullanabileceğini, nasıl destek alacağını, test sürecinin nasıl ilerlediğini ve kurulum tarafında neyle karşılaşacağını da bilmek ister.
+          Bu yüzden içerik yapısını sadece satış değil, güven oluşturan bir mantıkla hazırladık.
         </p>
       </div>
 
@@ -236,8 +1090,7 @@
         <div class="content-box">
           <h3>Kimler İçin Uygun?</h3>
           <p>
-            Spor yayınlarını düzenli takip edenler, film ve dizi arşivine tek noktadan erişmek isteyenler, birden fazla cihazda
-            kolay kullanım arayanlar ve kurulum sürecinde yönlendirme isteyen kullanıcılar için uygundur.
+            Spor yayınlarını düzenli takip edenler, film ve dizi arşivine tek noktadan erişmek isteyenler, birden fazla cihazda kolay kullanım arayanlar ve kurulum sürecinde yönlendirme isteyen kullanıcılar için uygundur.
           </p>
         </div>
 
@@ -252,8 +1105,8 @@
         <div class="content-box">
           <h3>Neden Ayrı Bir Paket Sayfası?</h3>
           <p>
-            Çünkü “iptv paketleri” arayan kullanıcı doğrudan karar aşamasındadır. Bu yüzden bu sayfa hem kullanıcı deneyimi
-            hem de SEO açısından ana sayfadan ayrı çalışmalıdır.
+            Çünkü “iptv paketleri” arayan kullanıcı doğrudan karar aşamasındadır.
+            Bu yüzden bu sayfa hem kullanıcı deneyimi hem de arama görünürlüğü açısından ana sayfadan ayrı çalışmalıdır.
           </p>
         </div>
       </div>
@@ -270,9 +1123,12 @@
             Paket seçmeden önce sistem yapısını görmek isteyen kullanıcılar için test yayını talep etmek en pratik başlangıçtır.
           </p>
         </div>
+
         <div class="cta-band-buttons">
           <a href="https://wa.me/16892674393?text=Merhaba%20Test%20Yay%C4%B1n%C4%B1%20Almak%20%C4%B0stiyorum."
-             class="btn-hero primary" target="_blank">Test Yayını Al</a>
+             class="btn-hero primary"
+             target="_blank">Test Yayını Al</a>
+
           <a href="sss.html" class="btn-hero glass">SSS'yi İncele</a>
         </div>
       </div>
@@ -286,21 +1142,15 @@
   </section>
 
   <footer class="site-footer">
-    <div class="footer-wave">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-      </svg>
-    </div>
-
     <div class="footer-container">
       <div class="footer-grid">
         <div class="footer-col brand-col">
           <h3 class="footer-logo">ADJOY <span>IPTV</span></h3>
           <p class="footer-desc">Paketler, test yayını, kurulum desteği ve cihaz uyumluluğu için hazırlanmış güçlü yayın deneyimi.</p>
           <div class="social-links">
-            <a href="https://www.instagram.com/adjoytv" class="social-btn"><i class="fab fa-instagram"></i></a>
-            <a href="https://api.whatsapp.com/send/?phone=16892674393&text=Merhaba+ADJOY+IPTV+hakk%C4%B1nda+bilgi+almak+istiyorum.&type=phone_number&app_absent=0" class="social-btn"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://t.me/adjoytv" class="social-btn"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.instagram.com/adjoytv" class="social-btn" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://api.whatsapp.com/send/?phone=16892674393&text=Merhaba+ADJOY+IPTV+hakk%C4%B1nda+bilgi+almak+istiyorum.&type=phone_number&app_absent=0" class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/adjoytv" class="social-btn" target="_blank"><i class="fab fa-telegram-plane"></i></a>
             <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
@@ -348,11 +1198,130 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/16892674393?text=Merhaba%20ADJOY%20IPTV%20hakkında%20bilgi%20almak%20istiyorum."
-     class="whatsapp-float" target="_blank" aria-label="WhatsApp ile sohbet et">
+  <a href="https://wa.me/16892674393?text=Merhaba%20ADJOY%20IPTV%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+     class="whatsapp-float"
+     target="_blank"
+     aria-label="WhatsApp ile sohbet et">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <script src="js/main.js"></script>
+  <script>
+    const packageData = {
+      tr: [
+        {
+          duration: "1 Ay",
+          price: "370₺",
+          unit: "/ tek cihaz",
+          desc: "Kısa süreli kullanım düşünenler için pratik başlangıç paketi.",
+          features: [
+            "Hızlı aktivasyon",
+            "Kurulum yönlendirmesi",
+            "Yaygın cihaz desteği",
+            "WhatsApp destek hattı"
+          ],
+          text: "Merhaba 1 Ay Türkiye paketi hakkında bilgi almak istiyorum."
+        },
+        {
+          duration: "3 Ay",
+          price: "600₺",
+          unit: "/ tek cihaz",
+          desc: "Daha dengeli kullanım isteyenler için fiyat-performans odaklı tercih.",
+          features: [
+            "Avantajlı süre seçeneği",
+            "Smart TV ve mobil uyum",
+            "Kurulum desteği",
+            "Hızlı geri dönüş"
+          ],
+          text: "Merhaba 3 Ay Türkiye paketi hakkında bilgi almak istiyorum."
+        },
+        {
+          duration: "6 Ay",
+          price: "850₺",
+          unit: "/ tek cihaz",
+          desc: "Düzenli kullanım planlayan kullanıcılar için daha güçlü orta vadeli çözüm.",
+          features: [
+            "Uzun süreli rahat kullanım",
+            "Cihaz uyumluluğu",
+            "Destek önceliği",
+            "Kolay yenileme süreci"
+          ],
+          text: "Merhaba 6 Ay Türkiye paketi hakkında bilgi almak istiyorum."
+        },
+        {
+          duration: "12 Ay",
+          price: "1500₺",
+          unit: "/ tek cihaz",
+          desc: "Uzun vadeli kullanım düşünenler için en güçlü ve en mantıklı plan.",
+          features: [
+            "Uzun dönem kullanım avantajı",
+            "Hızlı aktivasyon",
+            "Kurulum ve yönlendirme desteği",
+            "Daha ekonomik yıllık tercih"
+          ],
+          text: "Merhaba 12 Ay Türkiye paketi hakkında bilgi almak istiyorum.",
+          popular: true
+        }
+      ],
+      eu: [
+        {
+          duration: "12 Ay",
+          price: "60€",
+          unit: "/ tek cihaz",
+          desc: "Avrupa bölgesi için hazırlanan yıllık kullanım seçeneği.",
+          features: [
+            "Avrupa bölgesine uygun plan",
+            "Kurulum desteği",
+            "Hızlı aktivasyon",
+            "WhatsApp üzerinden yönlendirme"
+          ],
+          text: "Merhaba 12 Ay Avrupa paketi hakkında bilgi almak istiyorum.",
+          popular: true
+        }
+      ]
+    };
+
+    const grid = document.getElementById("g-grid");
+    const tabs = document.querySelectorAll(".g-tab");
+
+    function renderPackages(region = "tr") {
+      const items = packageData[region] || [];
+      grid.innerHTML = items.map(item => `
+        <div class="plan-card ${item.popular ? 'popular' : ''}">
+          ${item.popular ? '<span class="plan-badge">ÖNE ÇIKAN</span>' : ''}
+          <div class="plan-duration">${item.duration}</div>
+          <div class="plan-price">
+            <strong>${item.price}</strong>
+            <span>${item.unit}</span>
+          </div>
+          <div class="plan-desc">${item.desc}</div>
+          <ul class="plan-list">
+            ${item.features.map(feature => `<li><i class="fas fa-check"></i><span>${feature}</span></li>`).join("")}
+          </ul>
+          <button class="plan-btn" onclick="window.open('https://wa.me/16892674393?text=${encodeURIComponent(item.text)}','_blank')">
+            Paketi Sor
+          </button>
+        </div>
+      `).join("");
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+        renderPackages(tab.dataset.region);
+      });
+    });
+
+    renderPackages("tr");
+
+    const burger = document.getElementById("burger");
+    const navLinks = document.getElementById("navLinks");
+
+    if (burger && navLinks) {
+      burger.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    }
+  </script>
 </body>
 </html>
