@@ -23,16 +23,16 @@ function toggleMenu() {
   resize();
   new ResizeObserver(resize).observe(canvas.parentElement);
 
-  const N = 110;
+  const N = 90;
   pts = [];
   for (let i = 0; i < N; i++) {
     pts.push({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
-      vx: (Math.random() - .5) * .25,
-      vy: (Math.random() - .5) * .25,
-      r: Math.random() * 1.6 + .3,
-      a: Math.random() * .5 + .1
+      vx: (Math.random() - .5) * .18,
+      vy: (Math.random() - .5) * .18,
+      r: Math.random() * 1.5 + .3,
+      a: Math.random() * .35 + .08
     });
   }
 
@@ -51,12 +51,12 @@ function toggleMenu() {
       const d = Math.sqrt(dx * dx + dy * dy) || 1;
 
       if (d < 100) {
-        p.vx += dx / d * .012;
-        p.vy += dy / d * .012;
+        p.vx += dx / d * .008;
+        p.vy += dy / d * .008;
       }
 
-      p.vx *= .99;
-      p.vy *= .99;
+      p.vx *= .992;
+      p.vy *= .992;
       p.x += p.vx;
       p.y += p.vy;
 
@@ -67,11 +67,11 @@ function toggleMenu() {
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(147,197,253,${p.a})`;
+      ctx.fillStyle = `rgba(37,99,235,${p.a})`;
       ctx.fill();
     });
 
-    const LINK = 130;
+    const LINK = 120;
     for (let i = 0; i < pts.length; i++) {
       for (let j = i + 1; j < pts.length; j++) {
         const dx = pts[i].x - pts[j].x;
@@ -79,11 +79,11 @@ function toggleMenu() {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < LINK) {
-          const alpha = .15 * (1 - dist / LINK);
+          const alpha = .10 * (1 - dist / LINK);
           ctx.beginPath();
           ctx.moveTo(pts[i].x, pts[i].y);
           ctx.lineTo(pts[j].x, pts[j].y);
-          ctx.strokeStyle = `rgba(99,130,246,${alpha})`;
+          ctx.strokeStyle = `rgba(37,99,235,${alpha})`;
           ctx.lineWidth = .6;
           ctx.stroke();
         }
