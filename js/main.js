@@ -100,7 +100,7 @@ function toggleMenu() {
   const phrases = [
     'Premium IPTV',
     'Ücretsiz Test',
-    '4K Güçlü ı',
+    '4K Güçlü',
     'Hızı Kurulum'
   ];
 
