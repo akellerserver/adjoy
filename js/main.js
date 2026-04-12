@@ -98,10 +98,10 @@ function toggleMenu() {
 // TYPING
 (function() {
   const phrases = [
-    'Premium IPTV Deneyimi',
-    'Ücretsiz Test Yayını',
-    '4K Güçlü Yayın Altyapısı',
-    'Anında Kurulum & Destek'
+    'Premium IPTV',
+    'Ücretsiz Test',
+    '4K Güçlü ı',
+    'Hızı Kurulum'
   ];
 
   let pi = 0, ci = 0, del = false;
