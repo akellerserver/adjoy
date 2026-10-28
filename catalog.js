@@ -4,13 +4,13 @@
  */
 window.ADJOY_CONFIG = Object.freeze({
   brand: 'ADJOY', whatsapp: '16892674393', currency: 'TRY',
-  catalogSource: 'https://mertshop.com/uygulamalar', updated: '2026-09-07'
+  catalogSource: 'https://mertshop.com/uygulamalar', updated: '2026-10-28'
 });
 window.ADJOY_PRODUCTS = [
   {
     "id": "ibo",
     "name": "IBO Player",
-    "image": "assets__logos__ibosol__iboplayer.png",
+    "image": "assets/logos/ibosol/iboplayer.png",
     "badge": "IBOSOL seçkisi",
     "category": "MEDYA OYNATICI",
     "description": "Aboneliğini cihazında tamamlayan oynatıcı.",
@@ -20,16 +20,22 @@ window.ADJOY_PRODUCTS = [
         "id": "year",
         "name": "1 Yıl",
         "price": 250
+      },
+      {
+        "id": "lifetime",
+        "name": "Süresiz",
+        "price": 600
       }
     ],
     "clean": true,
     "collection": "ibosol",
-    "source": "https://tvplayeribo.com/"
+    "source": "https://tvplayeribo.com/",
+    "preferredVariant": "lifetime"
   },
   {
     "id": "bob",
     "name": "Bob Player",
-    "image": "assets__logos__ibosol__bobplayer.png",
+    "image": "assets/logos/ibosol/bobplayer.png",
     "badge": "IBOSOL seçkisi",
     "category": "MEDYA OYNATICI",
     "description": "Aboneliğini cihazında tamamlayan oynatıcı.",
@@ -39,16 +45,22 @@ window.ADJOY_PRODUCTS = [
         "id": "year",
         "name": "1 Yıl",
         "price": 250
+      },
+      {
+        "id": "lifetime",
+        "name": "Süresiz",
+        "price": 600
       }
     ],
     "clean": true,
     "collection": "ibosol",
-    "source": "https://bobplayers.com/"
+    "source": "https://bobplayers.com/",
+    "preferredVariant": "lifetime"
   },
   {
     "id": "duplex-tv",
     "name": "Duplex TV",
-    "image": "assets__logos__ibosol__duplex.png",
+    "image": "assets/logos/ibosol/duplex.png",
     "badge": "IBOSOL seçkisi",
     "category": "MEDYA OYNATICI",
     "description": "Aboneliğini cihazında tamamlayan oynatıcı.",
@@ -58,16 +70,45 @@ window.ADJOY_PRODUCTS = [
         "id": "year",
         "name": "1 Yıl",
         "price": 250
+      },
+      {
+        "id": "lifetime",
+        "name": "Süresiz",
+        "price": 600
       }
     ],
     "clean": true,
     "collection": "ibosol",
-    "source": "https://duplex24.com/"
+    "source": "https://duplex24.com/",
+    "preferredVariant": "lifetime"
+  },
+  {
+    "id": "smartone",
+    "name": "SmartOne IPTV",
+    "image": "assets/logos/smartone.webp",
+    "clean": true,
+    "badge": "Smart TV",
+    "category": "MEDYA OYNATICI",
+    "description": "Büyük ekranına akıllı bir eşlikçi.",
+    "detail": "SmartOne, desteklenen televizyon ve Android TV cihazlarında kullanılan bir medya oynatıcıdır. Üretici Samsung, LG, VIDAA, Vestel, Android TV ve Fire TV desteği listeler. Uyumluluk model ve mağaza bölgesine göre değişebilir; cihazında test ederek seç.",
+    "source": "https://www.smartone-iptv.com/",
+    "variants": [
+      {
+        "id": "year",
+        "name": "1 Yıl",
+        "price": 250
+      },
+      {
+        "id": "lifetime",
+        "name": "Süresiz",
+        "price": 900
+      }
+    ]
   },
   {
     "id": "ibosol-iboxxplayer",
     "name": "IBOXX Player",
-    "image": "assets__logos__ibosol__iboxxplayer.png",
+    "image": "assets/logos/ibosol/iboxxplayer.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -91,7 +132,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-abeplayertv",
     "name": "ABE Player TV",
-    "image": "assets__logos__ibosol__abeplayertv.png",
+    "image": "assets/logos/ibosol/abeplayertv.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -115,7 +156,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-macplayer",
     "name": "MAC Player",
-    "image": "assets__logos__ibosol__macplayer.png",
+    "image": "assets/logos/ibosol/macplayer.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -139,7 +180,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "virginia",
     "name": "Virginia TV",
-    "image": "assets__logos__ibosol__virginia.png",
+    "image": "assets/logos/ibosol/virginia.png",
     "badge": "IBOSOL seçkisi",
     "category": "MEDYA OYNATICI",
     "description": "Aboneliğini cihazında tamamlayan oynatıcı.",
@@ -158,7 +199,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-allplayer",
     "name": "All Player",
-    "image": "assets__logos__ibosol__allplayer.png",
+    "image": "assets/logos/ibosol/allplayer.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -182,7 +223,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-hushplay",
     "name": "Hush Play",
-    "image": "assets__logos__ibosol__hushplay.png",
+    "image": "assets/logos/ibosol/hushplay.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -206,7 +247,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-ktnplayer",
     "name": "KTN Player",
-    "image": "assets__logos__ibosol__ktnplayer.png",
+    "image": "assets/logos/ibosol/ktnplayer.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -230,7 +271,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-familyplayer",
     "name": "Family Player",
-    "image": "assets__logos__ibosol__familyplayer.png",
+    "image": "assets/logos/ibosol/familyplayer.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -254,7 +295,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-ibossplayer",
     "name": "IBOSS Player",
-    "image": "assets__logos__ibosol__ibossplayer.png",
+    "image": "assets/logos/ibosol/ibossplayer.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -278,7 +319,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-king4kplayer",
     "name": "King 4K Player",
-    "image": "assets__logos__ibosol__king4kplayer.png",
+    "image": "assets/logos/ibosol/king4kplayer.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -302,7 +343,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-ibostb",
     "name": "IBO STB",
-    "image": "assets__logos__ibosol__ibostb.png",
+    "image": "assets/logos/ibosol/ibostb.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -326,7 +367,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-bobpro",
     "name": "Bob Pro",
-    "image": "assets__logos__ibosol__bobpro.png",
+    "image": "assets/logos/ibosol/bobpro.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -350,7 +391,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-bobpremium",
     "name": "Bob Premium",
-    "image": "assets__logos__ibosol__bobpremium.png",
+    "image": "assets/logos/ibosol/bobpremium.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -374,7 +415,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-ibosolplayer",
     "name": "IBOSOL Player",
-    "image": "assets__logos__ibosol__ibosolplayer.png",
+    "image": "assets/logos/ibosol/ibosolplayer.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -398,7 +439,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-flixnet",
     "name": "Flixnet",
-    "image": "assets__logos__ibosol__flixnet.png",
+    "image": "assets/logos/ibosol/flixnet.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -422,7 +463,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibosol-smartonepro",
     "name": "SmartOne Pro",
-    "image": "assets__logos__ibosol__smartonepro.png",
+    "image": "assets/logos/ibosol/smartonepro.png",
     "clean": true,
     "collection": "ibosol",
     "badge": "IBOSOL seçkisi",
@@ -446,7 +487,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "ibo-pro",
     "name": "IBO Player Pro",
-    "image": "assets__logos__ibo-player-pro.jpg",
+    "image": "assets/logos/ibo-player-pro.jpg",
     "badge": "Öne çıkan",
     "tone": "gold",
     "category": "MEDYA OYNATICI",
@@ -466,32 +507,9 @@ window.ADJOY_PRODUCTS = [
     ]
   },
   {
-    "id": "smartone",
-    "name": "SmartOne IPTV",
-    "image": "assets__logos__smartone.webp",
-    "clean": true,
-    "badge": "Smart TV",
-    "category": "MEDYA OYNATICI",
-    "description": "Büyük ekranına akıllı bir eşlikçi.",
-    "detail": "SmartOne, desteklenen televizyon ve Android TV cihazlarında kullanılan bir medya oynatıcıdır. Üretici Samsung, LG, VIDAA, Vestel, Android TV ve Fire TV desteği listeler. Uyumluluk model ve mağaza bölgesine göre değişebilir; cihazında test ederek seç.",
-    "source": "https://www.smartone-iptv.com/",
-    "variants": [
-      {
-        "id": "year",
-        "name": "1 Yıl",
-        "price": 250
-      },
-      {
-        "id": "lifetime",
-        "name": "Süresiz",
-        "price": 900
-      }
-    ]
-  },
-  {
     "id": "hot",
     "name": "HotPlayer",
-    "image": "assets__logos__hotplayer.png",
+    "image": "assets/logos/hotplayer.png",
     "clean": true,
     "badge": "İki lisans seçeneği",
     "category": "MEDYA OYNATICI",
@@ -514,7 +532,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "smarters",
     "name": "Smarters Player",
-    "image": "assets__logos__smarters.png",
+    "image": "assets/logos/smarters.png",
     "dark": true,
     "clean": true,
     "badge": "Süresiz seçenek",
@@ -537,7 +555,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "duplecast",
     "name": "Duplecast",
-    "image": "assets__logos__duplecast.png",
+    "image": "assets/logos/duplecast.png",
     "clean": true,
     "badge": "3 yıllık seçenek",
     "category": "MEDYA OYNATICI",
@@ -560,7 +578,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "miro",
     "name": "Miro Player",
-    "image": "assets__logos__miro-player.jpg",
+    "image": "assets/logos/miro-player.jpg",
     "badge": "Yıllık lisans",
     "category": "MEDYA OYNATICI",
     "description": "İzleme deneyimine yeni bir seçenek.",
@@ -576,7 +594,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "various",
     "name": "Diğer Oynatıcılar",
-    "image": "assets__logos__multi.jpg",
+    "image": "assets/logos/multi.jpg",
     "badge": "Uygulamanı belirt",
     "category": "UYGULAMA LİSANSLARI",
     "description": "Listendeki oynatıcı için destek al.",
@@ -598,7 +616,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "duplexplay",
     "name": "DuplexPlay",
-    "image": "assets__logos__duplexplay.jpg",
+    "image": "assets/logos/duplexplay.jpg",
     "badge": "Bilgi al",
     "category": "MEDYA OYNATICI",
     "description": "Güncel aktivasyon durumunu sor.",
@@ -614,7 +632,7 @@ window.ADJOY_PRODUCTS = [
   {
     "id": "dealer",
     "name": "10'lu Bayi Seti",
-    "image": "assets__logos__duplexplay.jpg",
+    "image": "assets/logos/duplexplay.jpg",
     "badge": "Bayi talepleri",
     "category": "BAYİLİK",
     "description": "Toplu lisans koşulları için iletişim.",
@@ -636,14 +654,14 @@ window.ADJOY_PACKAGES = [
 ];
 window.ADJOY_ARTICLES = {
   iptv:{title:'IPTV nedir? İzleme deneyiminin arkasındaki teknoloji',category:'IPTV TEMELLERİ',reading:'3 dk okuma',icon:'monitor',teaser:'Yayın, uygulama ve cihaz arasındaki ilişkiyi tanı.',body:`<p>IPTV, televizyon içeriğinin internet protokolü üzerinden iletilmesini anlatır. Klasik bir anten bağlantısı yerine veri bağlantısından yararlanır. İzleme deneyimini anlamanın en kolay yolu üç parçayı ayrı düşünmektir: cihaz, oynatıcı ve içerik hizmeti.</p><h3>Üç parçalı bir deneyim</h3><ol><li><strong>Cihaz:</strong> Televizyon, telefon, tablet veya bilgisayarın. Her uygulama her cihazda bulunmayabilir.</li><li><strong>Oynatıcı:</strong> Uyumlu içeriği açan yazılım. SmartOne, HotPlayer ve benzeri ürünler bu katmanda çalışır.</li><li><strong>İçerik hizmeti:</strong> Kullanma hakkına sahip olduğun yayın veya kendi medya dosyaların. Oynatıcı lisansı bu hizmetin yerine geçmez.</li></ol><h3>Kaliteyi ne belirler?</h3><p>Görüntü kalitesi yalnızca ekranda yazan “4K” ifadesine bağlı değildir. Kaynağın çözünürlüğü, bağlantının kararlılığı, cihazın video desteği ve oynatıcı aynı zincirin parçalarıdır. Bu nedenle yalnızca hız testi yerine gerçek kullanım testi yapmak daha anlamlıdır.</p><h3>Nereden başlamalısın?</h3><p>Önce cihazının uygulama mağazasını kontrol et. Uygulamayı deneme süresi içinde kendi içeriğinle test et. Yayın hizmeti ile uygulama ücretini ayrı değerlendir; hangi ürünün neyi kapsadığını öğrenerek satın al.</p>`,source:'https://www.smartone-iptv.com/',sourceLabel:'SmartOne ürün bilgileri',own:true},
-  lisans:{title:'Uygulama lisansı mı, yayın paketi mi?',category:'SATIN ALMA REHBERİ',reading:'2 dk okuma',icon:'book',teaser:'Satın almadan önce bilmen gereken temel fark.',body:`<p>Bir medya oynatıcının ücretli olması, içinde televizyon kanalları veya film arşivi olduğu anlamına gelmez. Uygulama ile içeriğin ücretleri farklı amaçlarla alınır.</p><div class="comparison"><div><strong>Uygulama lisansı</strong>Seçtiğin yazılımın kullanımını etkinleştirir. Genellikle belirli bir uygulama ve cihazla ilişkilidir.</div><div><strong>Yayın paketi</strong>İçerik hizmetini kapsar. Hangi yayınları ve süreyi içerdiği hizmet sağlayıcının koşullarına bağlıdır.</div></div><h3>Yıllık ve süresiz seçenekler</h3><p>Yıllık lisans belirtilen süre için alınır. Süresiz lisans ise uygulama üreticisinin koşullarına tabidir; her cihaza aktarılacağı veya hizmetin sonsuza kadar çalışacağı anlamına gelmez. Cihaz değişimi kurallarını önceden öğren.</p><h3>Doğru ürünü seçmek için</h3><ul><li>Uygulamanın tam adını kontrol et. IBO Player ve IBO Player Pro aynı lisans değildir.</li><li>Deneme sürümünde cihazını ve kendi içeriğini test et.</li><li>Tek cihaz, lisans süresi ve aktivasyon koşullarını incele.</li><li>“Diğer Oynatıcılar” seçeneğinde uygulama adını mutlaka belirt; bu tek uygulama aktivasyonudur.</li></ul><p>Bu mağazada uygulama lisansları ve ADJOY IPTV paketleri ayrı ürün olarak listelenir. Sepete eklerken ürünün türünü ve süresini görebilirsin.</p>`,own:true},
-  kurulum:{title:'Smart TV’de kuruluma başlamadan önce',category:'KURULUM',reading:'3 dk okuma',icon:'monitor',teaser:'İlk kurulumunu kolaylaştıran kısa bir kontrol listesi.',body:`<p>Aynı markanın farklı televizyon modelleri bile farklı uygulama mağazaları kullanabilir. Bir uygulama seçerken yalnızca televizyon markasına değil modeline ve işletim sistemine de bak.</p><h3>1. Mağazadan başla</h3><p>Cihazının uygulama mağazasında oynatıcının tam adını ara. Benzer isimli uygulamalar arasında üretici bilgisini kontrol et. Bilmediğin kaynaklardan dosya yüklemek yerine üreticinin gösterdiği mağaza bağlantılarını kullan.</p><h3>2. Lisanslamadan önce test et</h3><p>Uygulamayı aç ve sunuluyorsa deneme süresini kullan. Yetkili olduğun içerik veya kendi listenle görüntü, ses ve kumanda kullanımını dene. Uyumsuz bir uygulamaya lisans almak uyumluluk sorununu çözmez.</p><h3>3. Uygulama bilgilerini doğrula</h3><p>Aktivasyon için uygulamanın gösterdiği cihaz tanımlayıcısı gerekebilir. Ürünün adını ve lisans süresini sepetinde kontrol et. Şifre, kart bilgisi veya yayın giriş bilgilerini sipariş notuna ekleme.</p><h3>4. Aktivasyon sonrasında</h3><p>Destek ekibinin verdiği adımları izle. Uygulamayı kapatıp tekrar açman gerekebilir. Lisanslı durum göründüğünde kendi içerik ayarlarını uygulama üreticisinin rehberine göre tamamla.</p>`,source:'https://www.hotplayer.app/',sourceLabel:'HotPlayer mağaza ve aktivasyon bilgileri',own:true},
+  lisans:{title:'Uygulama lisansı mı, yayın paketi mi?',category:'SATIN ALMA REHBERİ',reading:'2 dk okuma',icon:'book',teaser:'Satın almadan önce bilmen gereken temel fark.',body:`<p>Bir medya oynatıcının ücretli olması, içinde televizyon kanalları veya film arşivi olduğu anlamına gelmez. Uygulama ile içeriğin ücretleri farklı amaçlarla alınır.</p><div class="comparison"><div><strong>Uygulama lisansı</strong>Seçtiğin yazılımın kullanımını etkinleştirir. Genellikle belirli bir uygulama ve cihazla ilişkilidir.</div><div><strong>Yayın paketi</strong>İçerik hizmetini kapsar. Hangi yayınları ve süreyi içerdiği hizmet sağlayıcının koşullarına bağlıdır.</div></div><h3>Yıllık ve süresiz seçenekler</h3><p>Yıllık lisans belirtilen süre için alınır. Süresiz lisans ise uygulama üreticisinin koşullarına tabidir; her cihaza aktarılacağı veya hizmetin sonsuza kadar çalışacağı anlamına gelmez. Cihaz değişimi kurallarını önceden öğren.</p><h3>Doğru ürünü seçmek için</h3><ul><li>Uygulamanın tam adını kontrol et. IBO Player ve IBO Player Pro aynı lisans değildir.</li><li>Deneme sürümünde cihazını ve kendi içeriğini test et.</li><li>Tek cihaz, lisans süresi ve aktivasyon koşullarını incele.</li><li>“Diğer Oynatıcılar” seçeneğinde uygulama adını mutlaka belirt; bu tek uygulama aktivasyonudur.</li></ul><p>Bu mağazada uygulama lisansları ve ADJOY IPTV paketleri ayrı ürün olarak listelenir. Satın al bağlantısına basmadan önce ürünün türünü ve süresini kontrol edebilirsin.</p>`,own:true},
+  kurulum:{title:'Smart TV’de kuruluma başlamadan önce',category:'KURULUM',reading:'3 dk okuma',icon:'monitor',teaser:'İlk kurulumunu kolaylaştıran kısa bir kontrol listesi.',body:`<p>Aynı markanın farklı televizyon modelleri bile farklı uygulama mağazaları kullanabilir. Bir uygulama seçerken yalnızca televizyon markasına değil modeline ve işletim sistemine de bak.</p><h3>1. Mağazadan başla</h3><p>Cihazının uygulama mağazasında oynatıcının tam adını ara. Benzer isimli uygulamalar arasında üretici bilgisini kontrol et. Bilmediğin kaynaklardan dosya yüklemek yerine üreticinin gösterdiği mağaza bağlantılarını kullan.</p><h3>2. Lisanslamadan önce test et</h3><p>Uygulamayı aç ve sunuluyorsa deneme süresini kullan. Yetkili olduğun içerik veya kendi listenle görüntü, ses ve kumanda kullanımını dene. Uyumsuz bir uygulamaya lisans almak uyumluluk sorununu çözmez.</p><h3>3. Uygulama bilgilerini doğrula</h3><p>Aktivasyon için uygulamanın gösterdiği cihaz tanımlayıcısı gerekebilir. WhatsApp mesajındaki ürün adını ve lisans süresini kontrol et. Şifre, kart bilgisi veya yayın giriş bilgilerini mesajına ekleme.</p><h3>4. Aktivasyon sonrasında</h3><p>Destek ekibinin verdiği adımları izle. Uygulamayı kapatıp tekrar açman gerekebilir. Lisanslı durum göründüğünde kendi içerik ayarlarını uygulama üreticisinin rehberine göre tamamla.</p>`,source:'https://www.hotplayer.app/',sourceLabel:'HotPlayer mağaza ve aktivasyon bilgileri',own:true},
   baglanti:{title:'Yayın takılıyorsa önce bunları kontrol et',category:'İZLEME İPUÇLARI',reading:'3 dk okuma',icon:'wifi',teaser:'Bağlantı, cihaz ve kaynak sorunlarını adım adım ayır.',body:`<p>Takılma tek bir nedenden kaynaklanmaz. Bağlantı, cihaz, içerik kaynağı ve oynatıcı birbirini etkiler. Küçük kontroller, sorunun yerini daha kolay bulmanı sağlar.</p><h3>Önce bağlantıyı sadeleştir</h3><p>Mümkünse kablolu Ethernet bağlantısını dene. Kablosuz kullanıyorsan modemle cihaz arasındaki mesafeyi azalt ve aynı anda büyük dosya indiren başka cihaz olup olmadığını kontrol et. Tek bir hız ölçümü, bağlantının her an kararlı olduğunu göstermez.</p><h3>Karşılaştırarak ilerle</h3><ul><li>Aynı cihazda başka bir yetkili video kaynağını dene.</li><li>Varsa daha düşük çözünürlükte oynatmayı kontrol et.</li><li>Uygulamayı ve cihazı normal şekilde yeniden başlat.</li><li>Uygulama güncellemelerini cihazın mağazasından kontrol et.</li></ul><h3>Destek için doğru bilgiyi hazırla</h3><p>Uygulama adı, cihaz modeli, bağlantının kablolu veya kablosuz olması ve sorunun ne zaman yaşandığı işe yarar. Sorun tüm içeriklerde mi yoksa yalnızca belirli bir kaynakta mı oluşuyor, bunu not et.</p><p>Bu adımlar tanı koymayı kolaylaştırır; hiçbir uygulama veya lisans tüm kaynaklarda kesintisiz yayın garantisi vermez.</p>`,own:true},
   firefox:{title:'Firefox 155: geliştirici araçlarında yeni adımlar',category:'TARAYICILAR',reading:'2 dk okuma',date:'1 Eylül 2026',cover:'browser',coverTitle:'Firefox <small>155</small>',coverMeta:'WEB TEKNOLOJİLERİ',teaser:'Yeni sürüm, medya özelliği testlerini ve JSON Lines dosyalarını geliştirici araçlarına taşıyor.',body:`<p>Mozilla’nın geliştirici notlarına göre Firefox 155, 1 Eylül 2026’da yayımlandı. Sürümde web geliştiricilerinin günlük kontrollerini kolaylaştıran değişiklikler bulunuyor.</p><h3>Medya özellikleri aynı panelde</h3><p>Kurallar görünümündeki medya özelliği emülasyonları ayrı bir panelde toplandı. Bu panel, azaltılmış hareket tercihinin emülasyonunu da içeriyor. Böylece bir web arayüzünün farklı kullanıcı tercihlerine nasıl karşılık verdiğini incelemek kolaylaşıyor.</p><h3>JSON Lines desteği</h3><p>JSON görüntüleyici artık NDJSON olarak da bilinen JSON Lines belgelerini açabiliyor. Bu biçim, her satırda ayrı bir JSON kaydı kullanıyor.</p><p>Bu yazı, sürüm notlarından hazırlanmış kısa bir Türkçe özettir. Değişikliklerin tam listesi ve deneysel özelliklerin durumları için özgün MDN sayfasını inceleyebilirsin.</p>`,source:'https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/155',sourceLabel:'Firefox 155 release notes for developers',author:'Mozilla Contributors',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/',adaptation:'Türkçeye kısaltılarak uyarlanmıştır. Bu haber özeti CC BY-SA 4.0 ile sunulur.'},
   guvenlik:{title:'Firefox ESR için Eylül güvenlik güncellemesi',category:'DİJİTAL GÜVENLİK',reading:'2 dk okuma',date:'1 Eylül 2026',cover:'security',coverTitle:'Daha güvenli<br><small>bir web deneyimi.</small>',coverMeta:'FIREFOX ESR 140.15',teaser:'Mozilla, ESR 140.15 sürümünde giderilen güvenlik sorunlarını resmi duyurusunda paylaştı.',body:`<p>Mozilla, 1 Eylül 2026 tarihli güvenlik duyurusunda Firefox ESR 140.15 sürümünde giderilen sorunları listeledi. Duyurunun genel etki seviyesi yüksek olarak belirtiliyor.</p><h3>Güncelleme neyi kapsıyor?</h3><p>Resmi listede Remote Settings Client, DOM bileşenleri ve ses/video işleme alanlarında çeşitli düzeltmeler yer alıyor. Mozilla’nın kendi ekipleri tarafından bulunan bazı güvenlik hataları da güncelleme kapsamına alınmış.</p><h3>Sürümünü kontrol et</h3><p>Firefox ESR kullananlar kurulu sürümünü tarayıcının yardım ve hakkında bölümünden görebilir. Bir kurum tarafından yönetilen cihazlarda güncellemeler kurumun dağıtım sürecine bağlı olabilir.</p><p>Buradaki metin resmi duyurunun kısa Türkçe özetidir. Etkilenen sürümler ve teknik ayrıntılar için Mozilla’nın duyurusuna başvur.</p>`,source:'https://www.mozilla.org/en-US/security/advisories/mfsa2026-84/',sourceLabel:'Mozilla Foundation Security Advisory 2026-84',author:'Mozilla Foundation',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/',adaptation:'Mozilla metni kısaltılmış ve Türkçeye uyarlanmıştır. Bu haber özeti CC BY-SA 4.0 ile sunulur.'},
   ccapi:{title:'Creative Commons, eski API hizmetini kapatıyor',category:'AÇIK KAYNAK',reading:'2 dk okuma',date:'6 Mayıs 2026',cover:'open',coverTitle:'Açık web.<br><small>Yeni bir altyapı.</small>',coverMeta:'CREATIVE COMMONS',teaser:'Planlanan kapanış tarihi 2 Kasım 2026. Geliştiriciler için statik veri alternatifleri gösteriliyor.',body:`<p>Creative Commons, 6 Mayıs 2026 tarihli duyurusunda api.creativecommons.org hizmetinin 2 Kasım 2026’da kapatılacağını açıkladı. Altyapı veya yazılım sorunlarının hizmeti bu tarihten önce de erişilemez hale getirebileceğini belirtti.</p><h3>Neden değişiyor?</h3><p>Eski API, artık sürdürülemeyen ccEngine altyapısına dayanıyor. Kuruluş ayrıca lisans verilerinin sık değişmemesi nedeniyle API yaklaşımının bu kullanım için uygun olmadığını ifade ediyor.</p><h3>Hangi alternatifler var?</h3><p>Duyuruda mevcut RDF dosyası ve CC Legal Tools veri deposundaki CSV dosyası öneriliyor. Bu hizmeti kullanan geliştiriciler, bağımlılıklarını inceleyip kendilerine uygun statik veri kaynağına geçişi planlayabilir.</p><p>Bu, açık kaynak altyapısına ilişkin arşiv haberinin Türkçe özetidir. Geçiş bağlantıları ve ayrıntılar özgün duyuruda yer alıyor.</p>`,source:'https://opensource.creativecommons.org/blog/entries/2026-05-06-sunsetting-api/',sourceLabel:'Sunsetting api.creativecommons.org',author:'Timid Robot Zehta / Creative Commons',license:'CC BY 4.0',licenseUrl:'https://creativecommons.org/licenses/by/4.0/',adaptation:'Kısaltılmış Türkçe uyarlama. Bu haber özeti CC BY 4.0 ile sunulur.'},
-  kaynaklar:{title:'Kaynaklar ve kullanım bilgisi',category:'ŞEFFAFLIK',reading:'7 Eylül 2026',body:`<p>Teknoloji bölümündeki metinler, yeniden kullanım izni bulunan kaynaklardan hazırlanmış kısa Türkçe uyarlamalardır. Editoryal yazılar 7 Eylül 2026 tarihinde derlenmiştir. Kaynakların özgün yayın tarihleri kartlarda korunur.</p><h3>Teknoloji haberleri</h3><ul><li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/155" target="_blank" rel="noopener noreferrer">Firefox 155 — Mozilla Contributors / MDN</a>. <a href="https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Attrib_copyright_license" target="_blank" rel="noopener noreferrer">MDN içerik lisansı</a>: CC BY-SA 2.5 veya sonraki sürüm. Türkçe özet CC BY-SA 4.0 ile sunulur.</li><li><a href="https://www.mozilla.org/en-US/security/advisories/mfsa2026-84/" target="_blank" rel="noopener noreferrer">Firefox ESR güvenlik duyurusu — Mozilla</a>. <a href="https://www.mozilla.org/en-US/foundation/licensing/website-content/" target="_blank" rel="noopener noreferrer">Mozilla metin lisansı</a>: CC BY-SA 3.0 veya sonraki sürüm. Türkçe özet CC BY-SA 4.0 ile sunulur.</li><li><a href="https://opensource.creativecommons.org/blog/entries/2026-05-06-sunsetting-api/" target="_blank" rel="noopener noreferrer">Eski CC API hizmetinin kapanışı — Timid Robot Zehta</a>. Kaynak ve Türkçe özet <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> kapsamındadır.</li></ul><h3>Ürünler ve görseller</h3><p>Uygulama listesi ve mağaza sahibinin seçtiği fiyatlar <a href="https://mertshop.com/uygulamalar" target="_blank" rel="noopener noreferrer">MertShop uygulama kataloğu</a> temel alınarak düzenlenmiştir. Bu sitedeki sipariş akışı ADJOY içindir. Başka satıcının ödeme bağlantıları kullanılmaz.</p><p>Uygulama işaretleri ilgili markaların ürünlerini tanıtmak için gösterilir ve sahiplerine aittir. Logolar yerel dosyalarda saklanır. Kaynaklar arasında üretici siteleri, uygulama mağazası ve referans katalog bulunur. Haber metinlerinin açık lisansı ürün logolarına uygulanmaz.</p><p>ADJOY logosu mağaza sahibi tarafından sağlanmıştır. Ana vitrin görseli bu site için yapay zekâyla üretilmiş özgün bir görseldir. Haber kartlarının tipografik kapakları siteye özel tasarlanmıştır.</p><h3>Rehberler</h3><p>Rehber yazıları bu mağaza için hazırlanmıştır. Teknik ürün bilgileri, ilgili rehber veya ürün detayındaki üretici bağlantılarından kontrol edilebilir.</p>`},
-  gizlilik:{title:'Gizlilik ve sipariş bilgisi',category:'MAĞAZA BİLGİSİ',reading:'Yerel sürüm',body:`<h3>Sepet ve favoriler</h3><p>Seçtiğin ürünler ve favoriler, tarayıcının yerel depolama alanında tutulur. Sepetteki ürünleri silebilir, favorilerini kaldırabilir veya tarayıcının site verilerini temizleyebilirsin. Sipariş notu kalıcı olarak kaydedilmez.</p><h3>WhatsApp siparişi</h3><p>Sepetten WhatsApp’a geçtiğinde ürün adları, lisans süreleri, adetler, toplam tutar ve varsa sipariş notun bir mesaj taslağına eklenir. Mesajı kendin gönderirsin. Ödeme ve aktivasyon koşulları destek ekibiyle teyit edilir. Site kart numarası toplamaz ve otomatik ödeme almaz.</p><h3>Dijital lisanslar</h3><p>Bir lisans tek uygulama/cihaz için listelenir. Cihaz uyumluluğu, aktarım ve kullanım süresi uygulama üreticisinin koşullarına bağlıdır. Ürün görsellerindeki markalar ilgili sahiplerine aittir.</p><h3>Haber ve dış bağlantılar</h3><p>Haberler sayfa içinde yerel olarak açılır. Kaynak veya destek bağlantısına tıkladığında ilgili dış sitenin koşulları geçerli olur. Bu sürüm analiz veya reklam takip aracı kullanmaz.</p>`}
+  kaynaklar:{title:'Görseller, ürünler ve rehberler',category:'KAYNAK BİLGİSİ',reading:'28 Ekim 2026',body:`<h3>Uygulama markaları</h3><p>Katalogdaki uygulama adları ve logolar ilgili sahiplerine aittir. Ürünlerin üretici veya mağaza bağlantıları, uygulama detaylarında bulunur.</p><h3>Fiyat ve ürün bilgileri</h3><p>Fiyatlar ADJOY tarafından kullanılan mevcut katalogdan korunmuştur. Ödeme öncesinde ürünün kapsamı, cihaz uyumluluğu ve aktivasyon koşulları teyit edilir.</p><h3>Tasarım ve görseller</h3><p>Yeşil, siyah ve beyaz tasarım ADJOY için hazırlanmıştır. Ana sayfadaki televizyon görseli yapay zekâ ile üretilmiş bir kullanım görselidir; televizyon veya kumanda satışı değildir.</p><h3>Rehberler</h3><p>Kurulum ve lisans rehberleri bu mağaza için hazırlanmıştır. Uygulamaya ilişkin güncel teknik bilgiler için ürün detayındaki üretici bağlantılarını kullanabilirsin.</p>`},
+  gizlilik:{title:'Gizlilik ve satın alma bilgisi',category:'ADJOY BİLGİ',reading:'28 Ekim 2026',body:`<h3>Doğrudan WhatsApp</h3><p>Ürünün yanındaki satın al bağlantısı, seçtiğin ürünün adı, lisans süresi ve listelenen fiyatını WhatsApp mesaj taslağında açar. Mesajı kendin gönderirsin. Ödeme ve aktivasyon görüşmede netleştirilir. Bu site kart bilgisi toplamaz, otomatik ödeme almaz ve kullanıcı hesabı açmanı istemez.</p><h3>Favoriler</h3><p>Favori uygulamalar yalnızca bu tarayıcıda saklanır. Favorilerini tek tek kaldırabilir veya tarayıcının site verilerini temizleyebilirsin.</p><h3>Dış bağlantılar</h3><p>WhatsApp ve uygulama üreticilerinin bağlantıları kendi sitelerinde açılır. Bu hizmetlerin gizlilik koşulları geçerlidir. Bu sayfa analiz veya reklam takip kodu kullanmaz.</p><h3>Lisans kapsamı</h3><p>Uygulama lisansı tek cihaz için listelenir; yayın paketi veya içerik aboneliği değildir. Süresiz lisans, uygulama üreticisinin kullanım ve cihaz aktarım koşullarına tabidir.</p>`}
 };
 
 
@@ -653,4 +671,4 @@ window.ADJOY_PACKAGES.push({id:"iptv-yurtdisi-12",name:"ADJOY IPTV · Yurtdış�
 window.ADJOY_ARTICLES.secim={title:'IPTV alırken nelere dikkat edilmeli?',category:'SATIN ALMA REHBERİ',reading:'3 dakika',own:true,body:'<p>Doğru paket, cihazınız ve izleme alışkanlığınızla uyumlu olandır. Karar vermeden önce şu noktaları netleştirin.</p><h3>Kendi bağlantınızda test edin</h3><p>Deneme erişimini kullanacağınız cihazda ve ağda açın. Görüntü, ses, kanal geçişi ve sık izlediğiniz saatlerdeki performansı kontrol edin. Tek bir hız ölçümü kesintisiz yayın garantisi değildir.</p><h3>İçerik ve cihaz kapsamını sorun</h3><p>İstediğiniz içeriğin bulunup bulunmadığını, paket süresini, bölge kısıtlarını ve eşzamanlı cihaz sayısını ödeme öncesinde öğrenin. İçeriği sunma yetkisi konusunda açık bilgi veren hizmetleri tercih edin.</p><h3>Oynatıcıyı ayrı değerlendirin</h3><p>Uygulama lisansı yayın aboneliği değildir. Cihaz mağazasındaki tam uygulama adını kontrol edin. Benzer isimli uygulamalar aynı üreticiye veya lisansa ait olmayabilir.</p><h3>Koşulları yazılı teyit edin</h3><p>Toplam ücret, para birimi, yenileme, aktivasyon ve iade koşullarını öğrenin. Yurtdışı paketlerde kullanım bölgesini ve ücretin euro olduğunu kontrol edin.</p><h3>Destek kanalını deneyin</h3><p>Kurulumdan önce destek ekibine cihaz modelinizi sorun. Size anlaşılır ve somut cevaplar verilmesi, karar vermenizi kolaylaştırır.</p>'};
 
 // SmartOne IPTV is surfaced in the initial catalog, retaining its existing prices and product ID.
-{const index=window.ADJOY_PRODUCTS.findIndex(p=>p.id==="smartone");if(index>0){const [product]=window.ADJOY_PRODUCTS.splice(index,1);window.ADJOY_PRODUCTS.splice(1,0,product);}}
+
