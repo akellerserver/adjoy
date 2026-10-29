@@ -6,7 +6,7 @@
   const normalize=value=>String(value).toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ı/g,'i');
   const purchaseUrl=message=>`https://wa.me/${window.ADJOY_CONFIG.whatsapp}?text=${encodeURIComponent(message)}`;
   function productMessage(product,variant){return ['Merhaba ADJOY,',`${product.name} — ${variant.name} lisans ${variant.price===null?'hakkında bilgi almak':'satın almak'} istiyorum.`,variant.price===null?'Güncel fiyat ve aktivasyon durumunu paylaşır mısınız?':`Listelenen tutar: ${money(variant.price,product.currency)}.`, 'Cihaz uyumluluğu, ödeme ve aktivasyon koşullarını paylaşır mısınız?'].join('\n');}
-  function packageMessage(plan){return ['Merhaba ADJOY,',`${plan.name} satın almak istiyorum.`,`Süre: ${plan.months} ay.`,`Listelenen toplam tutar: ${money(plan.price,plan.currency)}.`,plan.months===12?'Hediye uygulama lisansının koşullarını da öğrenmek istiyorum.':'','Paket kapsamı, cihaz sayısı, ödeme ve aktivasyon koşullarını paylaşır mısınız?'].filter(Boolean).join('\n');}
+  function packageMessage(plan){return ['Merhaba ADJOY,',`${plan.name} satın almak istiyorum.`,`Süre: ${plan.months} ay.`,`Listelenen toplam tutar: ${money(plan.price,plan.currency)}.`].join('\n');}
   const productUrl=(p,v)=>purchaseUrl(productMessage(p,v));
   const packageUrl=p=>purchaseUrl(packageMessage(p));
   const preferredVariant=p=>p.variants.find(v=>v.id===p.preferredVariant)||p.variants[0];
