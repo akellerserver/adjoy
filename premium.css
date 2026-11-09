@@ -8,3 +8,47 @@
 @media(prefers-reduced-motion:reduce){.signature-word{transition:none}.signature-word.word-in{animation:none}.ambient-ball{transform:none!important;opacity:.025!important}}
 
 .signature-section{padding:40px 20px 35px}.signature-section h2{margin:16px 0}.signature-section p{margin-bottom:0}@media(max-width:700px){.signature-section{padding:32px 14px}}
+
+.ataturk-memorial {
+  position: relative;
+  background: linear-gradient(105deg, #181b1a, #222625);
+  color: #f4f2ed;
+  border-block: 1px solid #3a3e3b;
+}
+.ataturk-memorial-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 4vw, 34px);
+  padding-block: 17px;
+}
+.ataturk-memorial img {
+  display: block;
+  width: 76px;
+  height: 92px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  object-position: center 21%;
+  filter: grayscale(1);
+  border: 1px solid #8d918c;
+  border-radius: 4px;
+}
+.ataturk-memorial h2 {
+  margin: 4px 0;
+  color: inherit;
+  font-size: clamp(22px, 4vw, 34px);
+  line-height: 1.12;
+  letter-spacing: -.02em;
+}
+.ataturk-memorial p {
+  margin: 0;
+  color: #dddeda;
+  font-size: 14px;
+}
+.ataturk-memorial .ataturk-memorial-date {
+  color: #b8beb8;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 11px;
+  font-weight: 700;
+}
